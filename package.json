@@ -1,0 +1,68 @@
+{
+  "name": "blue-button-cms",
+  "version": "1.5.1-beta.1",
+  "description": "Blue Button CMS Parser",
+  "main": "./index.js",
+  "directories": {
+    "doc": "doc",
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "author": "Dmitry Kachaev <dmitry@amida-tech.com>",
+  "contributors": [
+    {
+      "name": "Matthew McCall",
+      "email": "matt@amida-tech.com"
+    },
+    {
+      "name": "Afsin Ustundag",
+      "email": "afsin.ustundag@us.pwc.com"
+    },
+    {
+      "name": "Matt Martz",
+      "email": "matt.martz@amida-tech.com"
+    }
+  ],
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "dependencies": {
+    "lodash": "~3.10.0",
+    "node-uuid": "~1.4.3",
+    "xml-stream": "*",
+    "jsonapter": "~0.0.1",
+    "jsonave": "^0.0.2"
+  },
+  "devDependencies": {
+    "blue-button-model": "1.5.0-beta.3",
+    "brfs": "~1.4.0",
+    "chai": "~2.3.0",
+    "coveralls": "~2.11.2",
+    "grunt": "~0.4.5",
+    "grunt-browserify": "~3.7.0",
+    "grunt-contrib-connect": "~0.10.1",
+    "grunt-contrib-jshint": "~0.11.2",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-coveralls": "~1.0.0",
+    "grunt-istanbul-coverage": "~0.1.1",
+    "grunt-jsbeautifier": "~0.2.10",
+    "grunt-mocha-phantomjs": "~0.6.1",
+    "grunt-mocha-test": "~0.12.7",
+    "mocha": "~2.2.4",
+    "mocha-lcov-reporter": "0.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amida-tech/cda-fhir.git"
+  },
+  "keywords": [
+    "bluebutton,cda,fhir,parsing"
+  ],
+  "bugs": {
+    "url": "https://github.com/amida-tech/cda-fhir/issues"
+  },
+  "homepage": "https://github.com/amida-tech/cda-fhir"
+}
