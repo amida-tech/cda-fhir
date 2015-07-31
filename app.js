@@ -381,7 +381,7 @@ Performer.prototype = proto;
 var ManufacturedMaterial = function (resource) {
 
     switch (resource.resourceType) {
-    case 'MedicationStatement':
+    case 'Medication':
         this._self = {
             code: function (node) {
                 //TODO - make a deeper analysis
@@ -416,8 +416,10 @@ ManufacturedMaterial.prototype = proto;
 
 var ManufacturedProduct = function (resource) {
 
+console.log('<<<<<',resource);
+
     switch (resource.resourceType) {
-    case 'MedicationStatement':
+    case 'Medication':
         this._self = {
             manufacturedMaterial: function (node) {
                 proto.control.push(new Triplet(node, new ManufacturedMaterial(resource)));
