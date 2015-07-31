@@ -112,7 +112,7 @@ var makeTransactionalBundle = function (bundle, base) {
 var proto = {
     tags: [], // Stack of XML tags processed
     bundle: {},
-    composite: {},
+    composition: {},
 
     findPatient: function () {
         var patient;
@@ -216,10 +216,11 @@ var AssignedEntity = function (practitioner) {
             'id': 'Organization/' + (serial++).toString()
         };
         _practitioner.managingOrganization = {
-            'reference':  + organization.id
+            'reference': +organization.id
         };
         proto.bundle.entry.push({
-            'resource': organization});
+            'resource': organization
+        });
         ensureProperty.call(_practitioner, 'practitionerRole', true).push({
             'managingOrganization': {
                 'reference': organization.id
@@ -239,6 +240,7 @@ var AssignedEntity = function (practitioner) {
 AssignedEntity.prototype = proto;
 
 var Performer = function (resource) {
+    var patient = findPatient(proto.bundle);
 
     switch (resource.resourceType) {
     case 'MedicationAdministration':
@@ -252,7 +254,16 @@ var Performer = function (resource) {
                 };
 
                 proto.bundle.entry.push({
-            'resource': practitioner});
+                    'resource': practitioner
+                });
+                proto.composition.section.push({
+                    'subject': {
+                        'reference': patient.id
+                    },
+                    'content': {
+                        'reference': practitioner.id
+                    }
+                });
                 medicationAdministration.practitioner = {
                     'reference': practitioner.id
                 };
@@ -271,7 +282,16 @@ var Performer = function (resource) {
                 };
 
                 proto.bundle.entry.push({
-            'resource': practitioner});
+                    'resource': practitioner
+                });
+                proto.composition.section.push({
+                    'subject': {
+                        'reference': patient.id
+                    },
+                    'content': {
+                        'reference': practitioner.id
+                    }
+                });
                 immunization.performer = {
                     'reference': practitioner.id
                 };
@@ -293,8 +313,8 @@ var ManufacturedMaterial = function (resource) {
     switch (resource.resourceType) {
     case 'Medication':
         this._self = {
-            templateId : function(node) {
-              templateId.push(node.attributes.root);  
+            templateId: function (node) {
+                templateId.push(node.attributes.root);
             },
             code: function (node) {
                 resource.name = node.attributes.displayName;
@@ -307,8 +327,8 @@ var ManufacturedMaterial = function (resource) {
         break;
     case 'Immunization':
         this._self = {
-            templateId : function(node) {
-              templateId.push(node.attributes.root);  
+            templateId: function (node) {
+                templateId.push(node.attributes.root);
             },
             code: function (node) {
                 resource.vaccineType = {
@@ -330,6 +350,7 @@ var ManufacturedMaterial = function (resource) {
 ManufacturedMaterial.prototype = proto;
 
 var ManufacturedProduct = function (resource) {
+    var patient = findPatient(proto.bundle);
 
     switch (resource.resourceType) {
     case 'Medication':
@@ -348,7 +369,16 @@ var ManufacturedProduct = function (resource) {
                     'reference': organization.id
                 };
                 proto.bundle.entry.push({
-            'resource': organization});
+                    'resource': organization
+                });
+                proto.composition.section.push({
+                    'subject': {
+                        'reference': patient.id
+                    },
+                    'content': {
+                        'reference': organization.id
+                    }
+                });
                 proto.control.push(new Triplet(node, new Organization(organization)));
             }
         };
@@ -370,7 +400,16 @@ var ManufacturedProduct = function (resource) {
                     'reference': organization.id
                 };
                 proto.bundle.entry.push({
-            'resource': organization});
+                    'resource': organization
+                });
+                proto.composition.section.push({
+                    'subject': {
+                        'reference': patient.id
+                    },
+                    'content': {
+                        'reference': organization.id
+                    }
+                });
                 proto.control.push(new Triplet(node, new Organization(organization)));
             }
         };
@@ -384,6 +423,7 @@ var ManufacturedProduct = function (resource) {
 ManufacturedProduct.prototype = proto;
 
 var Consumable = function (resource) {
+    var patient = findPatient(proto.bundle);
 
     this.manufacturedProduct = function (node) {
 
@@ -396,6 +436,14 @@ var Consumable = function (resource) {
             };
             proto.bundle.entry.push({
                 'resource': medication
+            });
+            proto.composition.section.push({
+                'subject': {
+                    'reference': patient.id
+                },
+                'content': {
+                    'reference': medication.id
+                }
             });
             medicationAdministration.medication = {
                 'reference': medication.id
@@ -523,7 +571,7 @@ var Observation = function (typeCode, resource, param1, bundle, composition) {
             };
             this._self.prototype = proto;
             break;
-            
+
         case '2.16.840.1.113883.10.20.22.4.8': //Severity observation
             event = param1;
             this._self = {
@@ -552,9 +600,9 @@ var Observation = function (typeCode, resource, param1, bundle, composition) {
                 effectiveTime: function (node) {
                     var subType = node.attributes['xsi:type'];
                     switch (subType) {
-                    case 'IVL_TS':
-                    default: // All the same for now
-                        ensureProperty.call(_condition,'onsetPeriod');
+                        //case 'IVL_TS':
+                        default: // All the same for now
+                            ensureProperty.call(_condition, 'onsetPeriod');
                         proto.control.push(new Triplet(node, new EffectiveTime(subType, _condition.onsetPeriod), templateId));
                         break;
                     }
@@ -571,21 +619,19 @@ var Observation = function (typeCode, resource, param1, bundle, composition) {
             };
             this._self.prototype = proto;
             break;
-            
-            case '2.16.840.1.113883.10.20.22.4.53': // Immunization refusal
+
+        case '2.16.840.1.113883.10.20.22.4.53': // Immunization refusal
             var immunization = resource;
             this._self = {
                 code: function (node) {
-                    ensureProperty.call(immunization,'explanation');
-                    ensureProperty.call(immunization.explanation,'resonNotGiven',true).push(
-                        {
-                            'coding':[makeCode(node)]
-                        }
-                    );
+                    ensureProperty.call(immunization, 'explanation');
+                    ensureProperty.call(immunization.explanation, 'resonNotGiven', true).push({
+                        'coding': [makeCode(node)]
+                    });
                 }
             };
             this._self.prototype = proto;
-           
+
             break;
         }
 
@@ -599,7 +645,7 @@ var Observation = function (typeCode, resource, param1, bundle, composition) {
 Observation.prototype = proto;
 
 var Product = function (medicationPrescription) {
-    var _medicationPrescription = medicationPrescription;
+    var patient = findPatient(proto.bundle);
 
     this.manufacturedProduct = function (node) {
 
@@ -610,7 +656,15 @@ var Product = function (medicationPrescription) {
         proto.bundle.entry.push({
             'resource': medication
         });
-        _medicationPrescription.medication = {
+        proto.composition.section.push({
+            'subject': {
+                'reference': patient.id
+            },
+            'content': {
+                'reference': medication.id
+            }
+        });
+        medicationPrescription.medication = {
             'reference': medication.id
         };
         proto.control.push(new Triplet(node, new ManufacturedProduct(medication)));
@@ -619,12 +673,7 @@ var Product = function (medicationPrescription) {
 Product.prototype = proto;
 
 var Author = function (medicationPrescription) {
-    var _medicationPrescription = medicationPrescription;
-
-    /* TODO check the standard on a time flavors
-    this.time = function(node) {
-        
-    };*/
+    var patient = findPatient(proto.bundle);
 
     this.assignedAuthor = function (node) {
         var practitioner = {
@@ -632,8 +681,17 @@ var Author = function (medicationPrescription) {
             'id': 'Practitioner/' + (serial++).toString()
         };
         proto.bundle.entry.push({
-            'resource': practitioner});
-        _medicationPrescription.practitioner = {
+            'resource': practitioner
+        });
+        proto.composition.section.push({
+            'subject': {
+                'reference': patient.id
+            },
+            'content': {
+                'reference': practitioner.id
+            }
+        });
+        medicationPrescription.practitioner = {
             'reference': practitioner.id
         };
         proto.control.push(new Triplet(node, new AssignedEntity(practitioner)));
@@ -704,11 +762,12 @@ var EntryRelationshipMedication = function (typeCode, medicationAdministration) 
                 'reference': _patient.id
             }
         };
-        var medicationPrescription = findResource.call(proto.bundle.entry,_medicationAdministration.prescription.reference);
-        if(medicationPrescription)
+        var medicationPrescription = findResource.call(proto.bundle.entry, _medicationAdministration.prescription.reference);
+        if (medicationPrescription) {
             medicationPrescription.reasonReference = {
                 'reference': condition.id
             };
+        }
         proto.bundle.entry.push({
             'resource': condition
         });
@@ -866,7 +925,7 @@ var SubstanceAdministration = function () {
                 performer: function (node) {
                     proto.control.push(new Triplet(node, new Performer(immunization), templateId));
                 },
-                
+
                 entryRelationship: function (node) {
                     proto.control.push(new Triplet(node, new EntryRelationship(node.attributes.typeCode, immunization), templateId));
                 },
@@ -1398,10 +1457,19 @@ var PatientRole = function (patient) {
             'id': 'Organization/' + (serial++).toString()
         };
         _patient.managingOrganization = {
-            'reference':  organization.id
+            'reference': organization.id
         };
         proto.bundle.entry.push({
-            'resource': organization});
+            'resource': organization
+        });
+        proto.composition.section.push({
+            'subject': {
+                'reference': _patient.id
+            },
+            'content': {
+                'reference': organization.id
+            }
+        });
         proto.control.push(new Triplet(node, new Organization(organization)));
     };
 };
@@ -1500,7 +1568,6 @@ var last = new Start();
 proto.control = [new Triplet({}, last)];
 
 var text;
-
 
 // "Data cruncher" --------------------------
 // stream usage
