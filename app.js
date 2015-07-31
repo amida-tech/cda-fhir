@@ -10,100 +10,6 @@
 // Startup file for debugging
 var fs = require('fs');
 var _ = require("lodash");
-var jsonave = require('jsonave').instance;
-var json2json = require('jsonapter').instance();
-
-var bbcms = require("./index");
-
-function renameProperty(object, oldName, newName) {
-    if (object && oldName !== newName) {
-        if (object.hasOwnProperty(oldName)) {
-            object[newName] = object[oldName];
-            delete object[oldName];
-        }
-        return object;
-    }
-}
-
-function massRename(root) {
-    if (root) {
-
-        var tmp = root["$children"];
-        //console.log("in massRename" + ((tmp)?"+":"-") + ((tmp.length > 0)?"+":"-"));
-
-        if (tmp && tmp.length > 0) {
-            tmp.forEach(function (value, idx, arr) {
-                massRename(value);
-                return true;
-            });
-        }
-
-        if (tmp &&
-            (tmp.length === 0 ||
-                (tmp.length === 1 && tmp[0] === root["$text"]))) {
-            renameProperty(root, "$text", root["$name"]);
-            //delete root["$name"];
-            delete root["$children"];
-        }
-        /*if (root["$"]) {
-            renameProperty(root, "$", root["$name"]);
-            delete root["$name"];
-        } else if (root["$text"]) {
-            renameProperty(root, "$text", root["$name"]);
-            delete root["$name"];
-        } else if(root["$children"]) {
-            renameProperty(root, "$children", root["$name"]);
-            delete root["$name"];
-        }*/
-
-        //console.log("out massRename");
-    }
-    return root;
-}
-
-var template = {
-    content: {
-        resourceType: 'Patient',
-        identifier: {
-            /*value: {
-                content: {
-                    system: {
-                        value: function(input) { return 'urn:oid:' + input },
-                        dataKey: 'root'
-                    },
-                    value: {
-                        dataKey: 'extension'
-                    }
-
-                }
-            },*/
-            //dataKey: jsonave("$['$children'][?(@.$name ==='recordTarget')]['$children'][?(@.$name ==='patientRole')]['$children'][?(@.$name ==='id')]['$']")
-            dataKey: '$name'
-        }
-    }
-};
-
-console.time("parse");
-
-var istream = fs.createReadStream(__dirname + '/test/artifacts/bluebutton-01-original.xml', 'utf-8');
-
-var obj = new bbcms.CdaParser(istream);
-
-obj.preserve('ClinicalDocument');
-
-obj.on('endElement: ClinicalDocument', function (item) {
-    //fs.writeFile('test.json', JSON.stringify(massRename(item), null, '  '));
-    //fs.writeFile('test.json', JSON.stringify( item ,null,'  '));
-    console.timeEnd("parse");
-
-    console.time("transfrom");
-    var i, max = 1;
-    for (i = 0; i < max; i++) {
-        var j = json2json.run(template, item);
-    }
-    console.timeEnd("transfrom");
-    //console.log(j);
-});
 
 var getResource = function (resType, slot) {
     var res = {
@@ -310,9 +216,10 @@ var AssignedEntity = function (practitioner) {
             'id': 'Organization/' + (serial++).toString()
         };
         _practitioner.managingOrganization = {
-            'reference': organization.id
+            'reference':  + organization.id
         };
-        ensureProperty.call(_practitioner, 'contained', true).push(organization);
+        proto.bundle.entry.push({
+            'resource': organization});
         ensureProperty.call(_practitioner, 'practitionerRole', true).push({
             'managingOrganization': {
                 'reference': organization.id
@@ -334,7 +241,7 @@ AssignedEntity.prototype = proto;
 var Performer = function (resource) {
 
     switch (resource.resourceType) {
-    case 'MedicationStatement':
+    case 'MedicationAdministration':
         var medicationAdministration = resource;
         this._self = {
 
@@ -344,7 +251,8 @@ var Performer = function (resource) {
                     'id': 'Practitioner/' + (serial++).toString()
                 };
 
-                ensureProperty.call(medicationAdministration, 'contained', true).push(practitioner);
+                proto.bundle.entry.push({
+            'resource': practitioner});
                 medicationAdministration.practitioner = {
                     'reference': practitioner.id
                 };
@@ -362,7 +270,8 @@ var Performer = function (resource) {
                     'id': 'Practitioner/' + (serial++).toString()
                 };
 
-                ensureProperty.call(immunization, 'contained', true).push(practitioner);
+                proto.bundle.entry.push({
+            'resource': practitioner});
                 immunization.performer = {
                     'reference': practitioner.id
                 };
@@ -379,12 +288,15 @@ var Performer = function (resource) {
 Performer.prototype = proto;
 
 var ManufacturedMaterial = function (resource) {
+    var templateId = [];
 
     switch (resource.resourceType) {
     case 'Medication':
         this._self = {
+            templateId : function(node) {
+              templateId.push(node.attributes.root);  
+            },
             code: function (node) {
-                //TODO - make a deeper analysis
                 resource.name = node.attributes.displayName;
                 resource.code = {
                     'coding': [makeCode(node)]
@@ -395,6 +307,9 @@ var ManufacturedMaterial = function (resource) {
         break;
     case 'Immunization':
         this._self = {
+            templateId : function(node) {
+              templateId.push(node.attributes.root);  
+            },
             code: function (node) {
                 resource.vaccineType = {
                     'coding': [makeCode(node)]
@@ -416,8 +331,6 @@ ManufacturedMaterial.prototype = proto;
 
 var ManufacturedProduct = function (resource) {
 
-console.log('<<<<<',resource);
-
     switch (resource.resourceType) {
     case 'Medication':
         this._self = {
@@ -426,7 +339,6 @@ console.log('<<<<<',resource);
             },
 
             manufacturerOrganization: function (node) {
-                ensureProperty.call(resource, 'contained', true);
 
                 var organization = {
                     'resourceType': 'Organization',
@@ -435,7 +347,8 @@ console.log('<<<<<',resource);
                 resource.manufacturer = {
                     'reference': organization.id
                 };
-                resource.contained.push(organization);
+                proto.bundle.entry.push({
+            'resource': organization});
                 proto.control.push(new Triplet(node, new Organization(organization)));
             }
         };
@@ -448,7 +361,6 @@ console.log('<<<<<',resource);
                 proto.control.push(new Triplet(node, new ManufacturedMaterial(resource)));
             },
             manufacturerOrganization: function (node) {
-                ensureProperty.call(resource, 'contained', true);
 
                 var organization = {
                     'resourceType': 'Organization',
@@ -457,7 +369,8 @@ console.log('<<<<<',resource);
                 resource.manufacturer = {
                     'reference': organization.id
                 };
-                resource.contained.push(organization);
+                proto.bundle.entry.push({
+            'resource': organization});
                 proto.control.push(new Triplet(node, new Organization(organization)));
             }
         };
@@ -475,8 +388,8 @@ var Consumable = function (resource) {
     this.manufacturedProduct = function (node) {
 
         switch (resource.resourceType) {
-        case 'MedicationStatement':
-            var medicationStatement = resource;
+        case 'MedicationAdministration':
+            var medicationAdministration = resource;
             var medication = {
                 'resourceType': 'Medication',
                 'id': 'Medication/' + (serial++).toString()
@@ -484,7 +397,7 @@ var Consumable = function (resource) {
             proto.bundle.entry.push({
                 'resource': medication
             });
-            medicationStatement.medication = {
+            medicationAdministration.medication = {
                 'reference': medication.id
             };
             proto.control.push(new Triplet(node, new ManufacturedProduct(medication)));
@@ -506,20 +419,18 @@ var EffectiveTimeSingleValue = function (object, propertyName) {
 EffectiveTimeSingleValue.prototype = proto;
 
 var EffectiveTime = function (subType, object) {
-    var _subType = subType;
-    var _object = object;
 
     this.low = function (node) {
-        _object.start = dateFix(node.attributes.value);
+        object.start = dateFix(node.attributes.value);
     };
 
     this.high = function (node) {
-        _object.end = dateFix(node.attributes.value);
+        object.end = dateFix(node.attributes.value);
     };
 
     this.period = function (node) {
-        _object.schedule.repeat.period = node.attributes.value;
-        _object.schedule.repeat.periodUnits = node.attributes.unit;
+        object.schedule.repeat.period = node.attributes.value;
+        object.schedule.repeat.periodUnits = node.attributes.unit;
     };
 };
 EffectiveTime.prototype = proto;
@@ -557,7 +468,6 @@ var Observation = function (typeCode, resource, param1, bundle, composition) {
     this.templateId = function (node) {
 
         templateId.push(node.attributes.root);
-        console.log('<<<<', node.attributes.root);
         //Make it polymorphic
         switch (node.attributes.root) {
         case '2.16.840.1.113883.10.20.22.4.7': //Allergy observation
@@ -643,13 +553,9 @@ var Observation = function (typeCode, resource, param1, bundle, composition) {
                     var subType = node.attributes['xsi:type'];
                     switch (subType) {
                     case 'IVL_TS':
-                        if (!_condition.onsetPeriod) {
-                            _condition.onsetPeriod = {};
-                        }
+                    default: // All the same for now
+                        ensureProperty.call(_condition,'onsetPeriod');
                         proto.control.push(new Triplet(node, new EffectiveTime(subType, _condition.onsetPeriod), templateId));
-                        break;
-                    default:
-                        proto.control.push(new Triplet(node, dummy, templateId));
                         break;
                     }
                 },
@@ -725,7 +631,8 @@ var Author = function (medicationPrescription) {
             'resourceType': 'Practitioner',
             'id': 'Practitioner/' + (serial++).toString()
         };
-        ensureProperty.call(_medicationPrescription, 'contained', true).push(practitioner);
+        proto.bundle.entry.push({
+            'resource': practitioner});
         _medicationPrescription.practitioner = {
             'reference': practitioner.id
         };
@@ -747,7 +654,7 @@ var Supply = function (medicationPrescription) {
         var subType = node.attributes['xsi:type'];
         switch (subType) {
         case 'IVL_TS':
-            console.log('???', _medicationPrescription);
+            //console.log('???', _medicationPrescription);
             ensureProperty.call(ensureProperty.call(_medicationPrescription, 'dispense'), 'validityPeriod');
             proto.control.push(new Triplet(node, new EffectiveTime(subType, _medicationPrescription.dispense.validityPeriod)));
             break;
@@ -797,9 +704,11 @@ var EntryRelationshipMedication = function (typeCode, medicationAdministration) 
                 'reference': _patient.id
             }
         };
-        _medicationAdministration.reasonForUseReference = {
-            'reference': condition.id
-        };
+        var medicationPrescription = findResource.call(proto.bundle.entry,_medicationAdministration.prescription.reference);
+        if(medicationPrescription)
+            medicationPrescription.reasonReference = {
+                'reference': condition.id
+            };
         proto.bundle.entry.push({
             'resource': condition
         });
@@ -878,9 +787,9 @@ var SubstanceAdministration = function () {
         var dosage = _.last(this.dosage);
         if (!dosage) {
             dosage = {
-                'schedule': {
+                /*'schedule': {
                     'repeat': {}
-                }
+                }*/
             };
             this.dosage.push(dosage);
         }
@@ -1489,9 +1398,10 @@ var PatientRole = function (patient) {
             'id': 'Organization/' + (serial++).toString()
         };
         _patient.managingOrganization = {
-            'reference': organization.id
+            'reference':  organization.id
         };
-        ensureProperty.call(_patient, 'contained', true).push(organization);
+        proto.bundle.entry.push({
+            'resource': organization});
         proto.control.push(new Triplet(node, new Organization(organization)));
     };
 };
@@ -1591,6 +1501,8 @@ proto.control = [new Triplet({}, last)];
 
 var text;
 
+
+// "Data cruncher" --------------------------
 // stream usage
 // takes the same options as the parser
 var saxStream = require("sax").createStream(true, {
@@ -1607,7 +1519,7 @@ saxStream.on("error", function (e) {
 });
 
 saxStream.on("opentag", function (node) {
-    console.log("opentag", node.name);
+    //console.log("opentag", node.name);
     //Skip node if it contains nullFlavor attribute
     if (true /*!node.attributes.nullFlavor*/ ) {
         //Peek item from top of stack
@@ -1620,22 +1532,21 @@ saxStream.on("opentag", function (node) {
                 handler.call(self, node); //Process node
             } else {
                 if (!node.isSelfClosing && !self[node.name + '$']) {
-                    console.log("pushing dummy ", node.name);
+                    //console.log("pushing dummy ", node.name);
                     proto.control.push(new Triplet(node, dummy));
                 }
             }
         } else {
-            console.log('++++', node);
+            console.log('++++', node); // Error?
         }
     } else {
         proto.control.push(new Triplet(node, dummy));
     }
 
-    proto.tags.push(node);
 });
 
 saxStream.on("closetag", function (tagname) {
-    console.log("closetag", tagname);
+    //console.log("closetag", tagname);
     //Peek item from top of stack
     var doc = _.last(proto.control);
     if (doc) {
@@ -1645,34 +1556,37 @@ saxStream.on("closetag", function (tagname) {
             handler(text); //Process node
         }
     } else {
-        console.log('----', tagname);
+        console.log('----', tagname); // Error?
     }
     //Check the 'control stack' and remove top itemm if we done
     if (_.last(proto.control).node.name === tagname) {
         proto.control.pop();
     }
 
-    proto.tags.pop();
 });
 
-/*saxStream.on("attribute", function (node) {
+/* No need in this
+saxStream.on("attribute", function (node) {
   console.log("attribute", node);
 });*/
 
+//Collect tag's text if any
 saxStream.on("text", function (node) {
     //console.log("text", node);
     text = node;
 });
 
+//We are done, print result
 saxStream.on("end", function () {
-    //control.pop();
-    //tags.pop(); 
-    console.log(proto.control.length);
+    console.timeEnd('sax'); //Done, check the time
+    //console.log(proto.control.length);
     console.log(JSON.stringify(makeTransactionalBundle(last.get(), 'http://localhost:8080/fhir/base'), null, ' '));
 });
 
-// pipe is supported, and it's readable/writable
-// same chunks coming in also go out.
+//No work yet done before this point, just definitions
+console.time('sax');
+
+//Just create a copy of input file while producing data organized in a bundle 
 fs.createReadStream(__dirname + '/test/artifacts/bluebutton-01-original.xml')
     .pipe(saxStream)
     .pipe(fs.createWriteStream("file-copy.xml"));
