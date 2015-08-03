@@ -11,17 +11,14 @@
 var fs = require('fs');
 var _ = require("lodash");
 
-var getResource = function (resType, slot) {
+var getResource = function (resType, init) {
     var res = {
         'resource': {
             'resourceType': resType
         }
     };
-    if (slot) {
-        if (!slot[resType]) {
-            slot[resType] = [];
-        }
-        slot[resType].push(res);
+    if(init) {
+        _.merge(res, init);
     }
     return res;
 };
@@ -68,8 +65,37 @@ var dateFix = function (date) {
 };
 
 var makeCode = function (node) {
+    var isOidBased = (/[\d\.]+/.test(node.attributes.codeSystem));
+    var system;
+        if(isOidBased)  {
+            //Reference - http://www.hl7.org/FHIR/2015May/terminologies-systems.html
+            //TODO - complete recoding
+            switch(node.attributes.codeSystem)  {
+                case '2.16.840.1.113883.6.96':
+                system = 'http://snomed.info/sct';
+                break;
+                case '2.16.840.1.113883.6.88' :
+                system = 'http://www.nlm.nih.gov/research/umls/rxnorm';
+                break;
+                case '2.16.840.1.113883.6.1' :
+                system = 'http://loinc.org';
+                break;
+                case '2.16.840.1.113883.6.8' :
+                system = 'http://unitsofmeasure.org';
+                break;
+                case '2.16.840.1.113883.3.26.1.2' :
+                system = 'http://ncimeta.nci.nih.gov';
+                break;
+                case '2.16.840.1.113883.6.12' :
+                system = 'http://www.ama-assn.org/go/cpt ';
+                break;
+                default:
+                system = 'urn:oid:' + node.attributes.codeSystem;
+                break;
+            }
+        }
     var retval = {
-        'system': ((/[\d\.]+/.test(node.attributes.codeSystem)) ? 'urn:oid:' + node.attributes.codeSystem : node.attributes.codeSystem),
+        'system': system,
         'code': node.attributes.code,
         'display': node.attributes.displayName
     };
@@ -512,6 +538,8 @@ Participant.prototype = proto;
 
 var Observation = function (typeCode, resource, param1, bundle, composition) {
     var templateId = [];
+    var familyMemberHistory;
+    var last;
 
     this.templateId = function (node) {
 
@@ -633,8 +661,53 @@ var Observation = function (typeCode, resource, param1, bundle, composition) {
             this._self.prototype = proto;
 
             break;
-        }
+        case '2.16.840.1.113883.10.20.22.4.47': // Family history death observation
+            familyMemberHistory = resource;
+            this._self = {
+                value: function(node) {
+                    last = _.last( ensureProperty.call(familyMemberHistory,'condition',true));
+                    if(last) {
+                        last.outcome = node.attributes.displayName;
+                    }
+                } 
+            };
+            this._self.prototype = proto;
 
+            break;
+         case '2.16.840.1.113883.10.20.22.4.31': // Age observation (familyhistory)
+            familyMemberHistory = resource;
+            this._self = {
+                value: function(node) {
+                    last = _.last( ensureProperty.call(familyMemberHistory,'condition',true));
+                    if(last) {
+                        last.onsetAge = node.attributes.value;
+                    }
+                } 
+            };
+            this._self.prototype = proto;
+
+            break;      
+        case '2.16.840.1.113883.10.20.22.4.46': // Family history observation
+            familyMemberHistory = resource;
+            this._self = {
+                value: function(node) {
+                    if(param1 ) {
+                        param1.type = {'coding': [makeCode(node)]};
+                        if(!_.contains( ensureProperty.call(familyMemberHistory,'condition',true), param1) ) {
+                            familyMemberHistory.condition.push(param1);
+                        };
+                    }
+                },
+                entryRelationship: function (node) {
+                    proto.control.push(new Triplet(node, new EntryRelationship(node.attributes.typeCode, familyMemberHistory), templateId));
+                }
+ 
+            };
+            this._self.prototype = proto;
+
+            break;
+          }
+        
     };
 
     this.obj = function () {
@@ -1122,7 +1195,99 @@ var Act = function (resource) {
 };
 Act.prototype = proto;
 
-var Entry = function () {
+var RelatedSubject = function(familyMemberHistory) {
+    
+     this.code = function (node) {
+        familyMemberHistory.relationship = { 'coding': [makeCode(node)]};
+    };
+    
+    this.subject =  function (node) {
+        proto.control.push(new Triplet(node, new Subject(familyMemberHistory)));
+    };
+    
+    this['sdtc:id'] = function(node) {
+        if( node.attributes.root === '2.16.840.1.113883.19.5.99999.2') {
+            this._self =  {
+                   administrativeGenderCode : function(node) {
+                       switch(node.attributes.code) {
+                           case 'M':
+                           familyMemberHistory.gender = 'male';
+                           break;
+                           case 'F':
+                           familyMemberHistory.gender = 'female';
+                           break;
+                       }
+                   },
+                   birthTime : function(node) {
+                       familyMemberHistory.bornDate = dateFix(node.attributes.value);
+                   }
+            };
+        }
+    };
+    
+    this.obj = function () {
+        return (this._self) ? this._self : this;
+    };
+};
+RelatedSubject.prototype = proto;
+
+
+var Subject = function(familyMemberHistory) {
+    
+     this.relatedSubject = function (node) {
+        proto.control.push(new Triplet(node, new RelatedSubject(familyMemberHistory)));
+    }; 
+    
+};
+Subject.prototype = proto;
+
+
+//The Family History Oranizer associates a set of observations with a family member.
+var Organizer = function() {
+    var templateId = [];
+    var resource;
+    var patient = findPatient(proto.bundle);
+
+
+    this.templateId = function (node) {
+        templateId.push(node.attributes.root); 
+    }; 
+
+    this.subject = function (node) {
+        if(_.contains(templateId, '2.16.840.1.113883.10.20.22.4.45')) {
+    var familyMemberHistory = getResource('FamilyMemberHistory',      {     
+          'id': 'FamilyMemberHistory/' + (serial++).toString(),
+            'patient': {
+                'reference': patient.id
+            }});
+    
+            proto.bundle.entry.push({
+            'resource': familyMemberHistory
+        });
+        proto.composition.section.push({
+            'subject': {
+                'reference': patient.id
+            },
+            'content': {
+                'reference': familyMemberHistory.id
+            }
+        });
+                proto.control.push(new Triplet(node, new Subject(familyMemberHistory)));
+                resource = familyMemberHistory;
+        }
+    }; 
+
+    this.component = function (node) {
+        if(resource) {
+            proto.control.push(new Triplet(node, new Component(resource)));
+        }
+    }; 
+
+
+};
+Organizer.prototype = proto;
+
+var Entry = function (resource) {
     var templateId = [];
 
     this.templateId = function (node) {
@@ -1158,15 +1323,20 @@ var Entry = function () {
         });
         proto.control.push(new Triplet(node, new Act(allergyIntolerance), templateId));
     };
+    
+    //Part of FAIMLY HSTORY
+    this.organizer = function( node) {
+        proto.control.push(new Triplet(node, new Organizer(), templateId));    
+    };
 
 };
 Entry.prototype = proto;
 
-var Section = function () {
+var Section = function (resource) {
     var templateId = [];
 
     this.entry = function (node) {
-        proto.control.push(new Triplet(node, new Entry(), templateId));
+        proto.control.push(new Triplet(node, new Entry(resource), templateId));
     };
 
     this.templateId = function (node) {
@@ -1176,24 +1346,29 @@ var Section = function () {
 };
 Section.prototype = proto;
 
-var StructuredBody = function () {
+var StructuredBody = function (resource) {
 
     this.component = function (node) {
-        proto.control.push(new Triplet(node, new Component()));
+        proto.control.push(new Triplet(node, new Component(resource)));
     };
 
 };
 StructuredBody.prototype = proto;
 
-var Component = function () {
+var Component = function (resource) {
 
     this.structuredBody = function (node) {
-        proto.control.push(new Triplet(node, new StructuredBody()));
+        proto.control.push(new Triplet(node, new StructuredBody(resource)));
     };
 
     this.section = function (node) {
-        proto.control.push(new Triplet(node, new Section()));
+        proto.control.push(new Triplet(node, new Section(resource)));
     };
+
+    this.observation = function (node) {
+        proto.control.push(new Triplet(node, new Observation( null, resource, {})));
+    };
+
 };
 Component.prototype = proto;
 
@@ -1542,7 +1717,7 @@ var ClinicalDocument = function () {
     authenticator & documentationOf  */
 
     this.component = function (node) {
-        proto.control.push(new Triplet(node, new Component()));
+        proto.control.push(new Triplet(node, new Component(null)));
     };
 
     this.get = function () {
