@@ -57,11 +57,15 @@ var findPatient = function (bundle) {
 };
 
 var dateFix = function (date) {
-    if (date && date.length === 8) {
-        return date.substr(0, 4) + '-' + date.substr(4, 2) + '-' + date.substr(6, 2);
-    } else {
-        return date;
+    if (date) {
+        switch (date.length) {
+        case 6:
+            return date.substr(0, 4) + '-' + date.substr(4, 2);
+        case 8:
+            return date.substr(0, 4) + '-' + date.substr(4, 2) + '-' + date.substr(6, 2);
+        }
     }
+    return date;
 };
 
 var isInContextOf = function (oids) {
@@ -225,68 +229,156 @@ Organization.prototype = proto;
 /**
  * AKA assignedAuthor
  */
-var AssignedEntity = function (practitioner) {
-    var _practitioner = practitioner;
+var AssignedEntity = function (resource, templateId) {
+    var patient = findPatient(proto.bundle);
 
-    this.addr = function (node) {
-        if (node.attributes.nullFlavor === 'UNK') {
-            return;
-        }
-        var address = {
-            'use': node.attributes.use
-        };
-        ensureProperty.call(_practitioner, 'address', true).push(address);
-
-        proto.control.push(new Triplet(node, new Addr(address)));
-    };
-
-    this.telecom = function (node) {
-        if (node.attributes.nullFlavor === 'UNK') {
-            return;
-        }
-        ensureProperty.call(_practitioner, 'telecom', true).push({
-            'use': node.attributes.use,
-            'value': node.attributes.value
-        });
-    };
-
-    this.representedOrganization = function (node) {
-        var organization = {
-            'resourceType': 'Organization',
-            'id': 'Organization/' + (serial++).toString()
-        };
-        _practitioner.managingOrganization = {
-            'reference': +organization.id
-        };
-        proto.bundle.entry.push({
-            'resource': organization
-        });
-        ensureProperty.call(_practitioner, 'practitionerRole', true).push({
-            'managingOrganization': {
-                'reference': organization.id
+    if (templateId && _.contains(templateId, '2.16.840.1.113883.10.20.22.4.87')) {
+        //Insurance Company Information
+        var coverage = resource;
+        this._self = {
+            id: function (node) {
+                ensureProperty.call(coverage, 'identifier', true).push(node.attributes.root);
+            },
+            representedOrganization: function (node) {
+                var organization = {
+                    'resourceType': 'Organization',
+                    'id': 'Organization/' + (serial++).toString()
+                };
+                coverage.issuer = {
+                    'reference': organization.id
+                };
+                proto.bundle.entry.push({
+                    'resource': organization
+                });
+                proto.composition.section.push({
+                    'subject': {
+                        'reference': patient.id
+                    },
+                    'content': {
+                        'reference': organization.id
+                    }
+                });
+                proto.control.push(new Triplet(node, new Organization(organization)));
             }
-        });
-        proto.control.push(new Triplet(node, new Organization(organization)));
-    };
+        };
+    } else if (templateId && _.contains(templateId, '2.16.840.1.113883.10.20.22.4.88')) {
+        //Guarantor Information... The person responsible for the final bill.
+        var contact = resource;
+        this._self = {
+            id: function (node) {
+                ensureProperty.call(contact, 'identifier', true).push(node.attributes.root);
+            },
+            code: function (node) {
+                contact.relationship = {
+                    'coding': [makeCode(node)]
+                };
+            },
+            addr: function (node) {
+                if (node.attributes.nullFlavor === 'UNK') {
+                    return;
+                }
+                var address = {
+                    'use': node.attributes.use
+                };
+                ensureProperty.call(contact, 'address', true).push(address);
 
-    this.assignedPerson = function (node) {
-        if (node.attributes.nullFlavor === 'UNK') {
-            return;
-        }
+                proto.control.push(new Triplet(node, new Addr(address)));
+            },
 
-        proto.control.push(new Triplet(node, new AssignedPerson(_practitioner)));
+            telecom: function (node) {
+                if (node.attributes.nullFlavor === 'UNK') {
+                    return;
+                }
+                ensureProperty.call(contact, 'telecom', true).push({
+                    'use': node.attributes.use,
+                    'value': node.attributes.value
+                });
+            },
+
+            assignedPerson: function (node) {
+                proto.control.push(new Triplet(node, new AssignedPerson(ensureProperty.call(contact, 'name'))));
+            }
+        };
+    } else {
+        var practitioner = resource;
+
+        this._self = {
+            addr: function (node) {
+                if (node.attributes.nullFlavor === 'UNK') {
+                    return;
+                }
+                var address = {
+                    'use': node.attributes.use
+                };
+                ensureProperty.call(practitioner, 'address', true).push(address);
+
+                proto.control.push(new Triplet(node, new Addr(address)));
+            },
+
+            telecom: function (node) {
+                if (node.attributes.nullFlavor === 'UNK') {
+                    return;
+                }
+                ensureProperty.call(practitioner, 'telecom', true).push({
+                    'use': node.attributes.use,
+                    'value': node.attributes.value
+                });
+            },
+
+            representedOrganization: function (node) {
+                var organization = {
+                    'resourceType': 'Organization',
+                    'id': 'Organization/' + (serial++).toString()
+                };
+                practitioner.managingOrganization = {
+                    'reference': +organization.id
+                };
+                proto.bundle.entry.push({
+                    'resource': organization
+                });
+                proto.composition.section.push({
+                    'subject': {
+                        'reference': patient.id
+                    },
+                    'content': {
+                        'reference': organization.id
+                    }
+                });
+                ensureProperty.call(practitioner, 'practitionerRole', true).push({
+                    'managingOrganization': {
+                        'reference': organization.id
+                    }
+                });
+                proto.control.push(new Triplet(node, new Organization(organization)));
+            },
+
+            assignedPerson: function (node) {
+                if (node.attributes.nullFlavor === 'UNK') {
+                    return;
+                }
+
+                proto.control.push(new Triplet(node, new AssignedPerson(practitioner)));
+            }
+        };
+    }
+
+    this.obj = function () {
+        return (this._self) ? this._self : this;
     };
 };
 AssignedEntity.prototype = proto;
 
 var Performer = function (resource) {
+    var templateId = [];
     var patient = findPatient(proto.bundle);
 
     switch (resource.resourceType) {
     case 'MedicationAdministration':
         var medicationAdministration = resource;
         this._self = {
-
+            templateId: function (node) {
+                templateId.push(node.attributes.root);
+            },
             assignedEntity: function (node) {
                 var practitioner = {
                     'resourceType': 'Practitioner',
@@ -307,7 +399,7 @@ var Performer = function (resource) {
                 medicationAdministration.practitioner = {
                     'reference': practitioner.id
                 };
-                proto.control.push(new Triplet(node, new AssignedEntity(practitioner)));
+                proto.control.push(new Triplet(node, new AssignedEntity(practitioner), templateId));
             }
         };
         this._self.prototype = proto;
@@ -315,6 +407,9 @@ var Performer = function (resource) {
     case 'Immunization':
         var immunization = resource;
         this._self = {
+            templateId: function (node) {
+                templateId.push(node.attributes.root);
+            },
             assignedEntity: function (node) {
                 var practitioner = {
                     'resourceType': 'Practitioner',
@@ -335,10 +430,61 @@ var Performer = function (resource) {
                 immunization.performer = {
                     'reference': practitioner.id
                 };
-                proto.control.push(new Triplet(node, new AssignedEntity(practitioner)));
+                proto.control.push(new Triplet(node, new AssignedEntity(practitioner), templateId));
             }
         };
         this._self.prototype = proto;
+        break;
+    case 'Claim':
+        var claim = resource;
+
+        this._self = {
+            templateId: function (node) {
+                templateId.push(node.attributes.root);
+            },
+            assignedEntity: function (node) {
+                if (templateId.length > 0) {
+
+                    switch (templateId[0]) {
+                    case '2.16.840.1.113883.10.20.22.4.87':
+                        var coverage = {
+                            'resourceType': 'Coverage',
+                            'id': 'Coverage/' + (serial++).toString()
+                        };
+                        coverage.subscriber = {
+                            'referencre': patient.id
+                        };
+                        proto.bundle.entry.push({
+                            'resource': coverage
+                        });
+                        proto.composition.section.push({
+                            'subject': {
+                                'reference': patient.id
+                            },
+                            'content': {
+                                'reference': coverage.id
+                            }
+                        });
+                        var coverages = ensureProperty.call(claim, 'coverage', true);
+                        coverages.push({
+                            'sequence': (coverages.length + 1),
+                            'coverage': {
+                                'reference': coverage.id
+                            }
+                        });
+                        proto.control.push(new Triplet(node, new AssignedEntity(coverage, templateId), templateId));
+                        break;
+                    case '2.16.840.1.113883.10.20.22.4.88':
+                        var contact = {};
+                        ensureProperty.call(patient, 'contact', true).push(contact);
+                        proto.control.push(new Triplet(node, new AssignedEntity(contact, templateId), templateId));
+                        break;
+                    }
+                }
+            }
+        };
+        this._self.prototype = proto;
+        break;
     }
 
     this.obj = function () {
@@ -545,7 +691,20 @@ var PlayingDevice = function (device) {
 };
 PlayingDevice.prototype = proto;
 
-var ParticipantRole = function (resource) {
+var ParticipantRole = function (resource, templateId) {
+    var claim;
+
+    //this.id = function (node) {
+    //    ensureProperty.call(resource, 'identifier').push(node.attributes.root);
+    //}; 
+
+    if (templateId && _.contains(templateId, '2.16.840.1.113883.10.20.22.4.89')) { //Covered Party Participant
+        claim = resource;
+        //TODO process claim patient (it's defaulted to patient now)
+    } else if (templateId && _.contains(templateId, '2.16.840.1.113883.10.20.22.4.90')) { //Policy Holder
+        claim = resource;
+        //TODO process claim.coverage.subscriber (it's defaulted to patient now)
+    }
 
     this.playingEntity = function (node) {
         proto.control.push(new Triplet(node, new PlayingEntity(resource)));
@@ -554,17 +713,98 @@ var ParticipantRole = function (resource) {
     this.playingDevice = function (node) {
         proto.control.push(new Triplet(node, new PlayingDevice(resource)));
     };
+
+    this.obj = function () {
+        return (this._self) ? this._self : this;
+    };
 };
 ParticipantRole.prototype = proto;
 
 var Participant = function (resource) {
+    var templateId = [];
+
+    this.templateId = function (node) {
+        templateId.push(node.attributes.root);
+    };
 
     this.participantRole = function (node) {
-        proto.control.push(new Triplet(node, new ParticipantRole(resource)));
+        proto.control.push(new Triplet(node, new ParticipantRole(resource, templateId), templateId));
     };
 
 };
 Participant.prototype = proto;
+
+var ObservationRange = function (resource) {
+
+    this.text$ = function (text) {
+        resource.text = text;
+    };
+
+};
+ObservationRange.prototype = proto;
+
+var ReferenceRange = function (resource) {
+
+    this.observationRange = function (node) {
+        proto.control.push(new Triplet(node, new ObservationRange(resource)));
+    };
+
+};
+ReferenceRange.prototype = proto;
+
+var genericObservationHandler = function (observation, templateId) {
+    return {
+        id: function (node) {
+            ensureProperty.call(observation, 'identifier', true).push(node.attributes.root);
+        },
+        code: function (node) {
+            observation.code = {
+                'coding': makeCode(node)
+            };
+        },
+        statusCode: function (node) {
+            observation.status = node.attributes.code;
+        },
+        effectiveTime: function (node) {
+            if (node.attributes.value) {
+                observation.appliesDateTime = dateFix(node.attributes.value);
+            } else {
+                observation.appliesPeriod = {};
+                proto.control.push(new Triplet(node, new EffectiveTime(null, observation.appliesPeriod), templateId));
+            }
+        },
+        value: function (node) {
+            switch (node.attributes['xsi:type']) {
+            case 'PQ':
+                observation.valueQuantity = {
+                    'value': node.attributes.value,
+                    'units': node.attributes.unit
+                };
+                break;
+            case 'CD':
+                observation.valueCodeableConcept = {
+                    'coding': [makeCode(node)]
+                };
+                break;
+            }
+        },
+        value$: function (text) {
+            if (!(observation.valueQuantity || observation.valueCodeableConcept)) {
+                observation.valueString = text;
+            }
+        },
+        interpretationCode: function (node) {
+            observation.interpretation = {
+                'coding': [
+                    makeCode(node)
+                ]
+            };
+        },
+        referenceRange: function (node) {
+            proto.control.push(new Triplet(node, new ReferenceRange(ensureProperty.call(observation, 'referenceRange')), templateId));
+        }
+    };
+};
 
 var Observation = function (typeCode, resource, param1, bundle, composition) {
     var templateId = [];
@@ -736,6 +976,34 @@ var Observation = function (typeCode, resource, param1, bundle, composition) {
                 }
 
             };
+            this._self.prototype = proto;
+
+            break;
+
+        case '2.16.840.1.113883.10.20.22.4.27': // Vital sign observation
+            var observation = resource;
+            this._self = genericObservationHandler(observation);
+            this._self.prototype = proto;
+
+            break;
+
+        case '2.16.840.1.113883.10.20.22.4.78': // Smoking status observation
+            observation = resource;
+            this._self = genericObservationHandler(observation);
+            this._self.prototype = proto;
+
+            break;
+
+        case '2.16.840.1.113883.10.20.22.4.38': // Social history observation
+            observation = resource;
+            this._self = genericObservationHandler(observation);
+            this._self.prototype = proto;
+
+            break;
+
+        case '2.16.840.1.113883.10.20.22.4.2': // Result observation
+            observation = resource;
+            this._self = genericObservationHandler(observation);
             this._self.prototype = proto;
 
             break;
@@ -971,6 +1239,17 @@ var Supply = function (resource) {
 };
 Supply.prototype = proto;
 
+var Procedure = function (resource) {
+
+    this.code = function (node) {
+        resource.type = {
+            'coding': [makeCode(node)]
+        };
+    };
+
+};
+Procedure.prototype = proto;
+
 var EntryRelationshipMedication = function (typeCode, medicationAdministration) {
     var _medicationAdministration = medicationAdministration;
 
@@ -1029,6 +1308,14 @@ var EntryRelationship = function (typeCode, resource) {
 
     this.observation = function (node) {
         proto.control.push(new Triplet(node, new Observation(typeCode, resource)));
+    };
+
+    this.act = function (node) {
+        proto.control.push(new Triplet(node, new Act(resource)));
+    };
+
+    this.procedure = function (node) {
+        proto.control.push(new Triplet(node, new Procedure(resource)));
     };
 
 };
@@ -1286,9 +1573,11 @@ SubstanceAdministration.prototype = proto;
 
 var Act = function (resource) {
     var templateId = [];
+    var claim;
 
     this.templateId = function (node) {
         templateId.push(node.attributes.root);
+
         switch (node.attributes.root) {
         case '2.16.840.1.113883.10.20.22.4.30':
             var allergyIntolerance = resource; //alias
@@ -1307,6 +1596,44 @@ var Act = function (resource) {
                     proto.control.push(new Triplet(node, new EntryRelationshipAllergyIntolerance(node.attributes.typeCode, allergyIntolerance), templateId));
                 }
             };
+            this._self.prototype = proto;
+            break;
+        case '2.16.840.1.113883.10.20.22.4.60': //Coverage activity
+            claim = resource;
+
+            this._self = {
+                entryRelationship: function (node) {
+                    proto.control.push(new Triplet(node, new EntryRelationship(node.attributes.typeCode, claim), templateId));
+                }
+            };
+            this._self.prototype = proto;
+            break;
+        case '2.16.840.1.113883.10.20.22.4.61': //Policy activity
+            claim = resource;
+
+            this._self = {
+                performer: function (node) {
+                    proto.control.push(new Triplet(node, new Performer(claim), templateId));
+                },
+                participant: function (node) {
+                    proto.control.push(new Triplet(node, new Participant(claim), templateId));
+                },
+                entryRelationship: function (node) {
+                    proto.control.push(new Triplet(node, new EntryRelationship(node.attributes.typeCode, claim), templateId));
+                }
+            };
+            this._self.prototype = proto;
+            break;
+        case '2.16.840.1.113883.10.20.1.19': //Authorization activity 
+            claim = resource;
+            this._self = {
+                entryRelationship: function (node) {
+                    var procedure = {};
+                    ensureProperty.call(claim, 'item', true).push(procedure);
+                    proto.control.push(new Triplet(node, new EntryRelationship(node.attributes.typeCode, procedure), templateId));
+                }
+            };
+            this._self.prototype = proto;
             break;
         }
 
@@ -1403,33 +1730,72 @@ var Organizer = function () {
     };
 
     this.component = function (node) {
-        if (resource) {
-            var familyHistoryOrganizer = '2.16.840.1.113883.10.20.22.4.45';
-            if (_.contains(templateId, familyHistoryOrganizer) || isInContextOf(familyHistoryOrganizer)) { //Family history organizer
-                proto.control.push(new Triplet(node, new Component(resource), templateId));
-            } else {
-                var functionalStatusOrganizer = ['2.16.840.1.113883.10.20.22.4.2', '2.16.840.1.113883.10.20.22.4.67'];
-                if (_.any(templateId, functionalStatusOrganizer) || isInContextOf(functionalStatusOrganizer)) { //Functional status section
-                    var clinicalImpression = getResource('ClinicalImpression', {
-                        'id': 'ClinicalImpression/' + (serial++).toString(),
-                        'patient': {
-                            'reference': patient.id
-                        }
-                    });
-                    proto.bundle.entry.push({
-                        'resource': clinicalImpression
-                    });
-                    proto.composition.section.push({
-                        'subject': {
-                            'reference': patient.id
-                        },
-                        'content': {
-                            'reference': clinicalImpression.id
-                        }
-                    });
-                    resource = clinicalImpression;
-                    proto.control.push(new Triplet(node, new Component(resource), templateId));
+        var observation;
+        var familyHistoryOrganizer = '2.16.840.1.113883.10.20.22.4.45';
+        var vitalSignsOrganizer = '2.16.840.1.113883.10.20.22.4.26';
+        var resultOrganizer = '2.16.840.1.113883.10.20.22.4.1';
+        if (_.contains(templateId, familyHistoryOrganizer) || isInContextOf(familyHistoryOrganizer)) { //Family history organizer
+            proto.control.push(new Triplet(node, new Component(resource), templateId));
+        } else if (_.contains(templateId, resultOrganizer) || isInContextOf(resultOrganizer)) { //esult organizer
+            observation = getResource('Observaton', {
+                'id': 'Observation/' + (serial++).toString(),
+                'patient': {
+                    'reference': patient.id
                 }
+            });
+            proto.bundle.entry.push({
+                'resource': observation
+            });
+            proto.composition.section.push({
+                'subject': {
+                    'reference': patient.id
+                },
+                'content': {
+                    'reference': observation.id
+                }
+            });
+            proto.control.push(new Triplet(node, new Component(observation), templateId));
+        } else if (_.contains(templateId, vitalSignsOrganizer) || isInContextOf(vitalSignsOrganizer)) { //Vital signs organizer
+            observation = getResource('Observaton', {
+                'id': 'Observation/' + (serial++).toString(),
+                'patient': {
+                    'reference': patient.id
+                }
+            });
+            proto.bundle.entry.push({
+                'resource': observation
+            });
+            proto.composition.section.push({
+                'subject': {
+                    'reference': patient.id
+                },
+                'content': {
+                    'reference': observation.id
+                }
+            });
+            proto.control.push(new Triplet(node, new Component(observation), templateId));
+        } else {
+            var functionalStatusOrganizer = ['2.16.840.1.113883.10.20.22.4.2', '2.16.840.1.113883.10.20.22.4.67'];
+            if (_.any(templateId, functionalStatusOrganizer) || isInContextOf(functionalStatusOrganizer)) { //Functional status section
+                var clinicalImpression = getResource('ClinicalImpression', {
+                    'id': 'ClinicalImpression/' + (serial++).toString(),
+                    'patient': {
+                        'reference': patient.id
+                    }
+                });
+                proto.bundle.entry.push({
+                    'resource': clinicalImpression
+                });
+                proto.composition.section.push({
+                    'subject': {
+                        'reference': patient.id
+                    },
+                    'content': {
+                        'reference': clinicalImpression.id
+                    }
+                });
+                resource = clinicalImpression;
+                proto.control.push(new Triplet(node, new Component(resource), templateId));
             }
         }
     };
@@ -1450,27 +1816,57 @@ var Entry = function (resource) {
 
     //Allergies, Adverse Reactions, Alerts
     this.act = function (node) {
-        var patient = findPatient(proto.bundle);
-        var allergyIntolerance = {
-            'resourceType': 'AllergyIntolerance',
-            'id': 'AllergyIntolerance/' + (serial++).toString(),
-            'patient': {
-                'reference': patient.id
-            }
-        };
+        var patient;
 
-        proto.bundle.entry.push({
-            'resource': allergyIntolerance
-        });
-        proto.composition.section.push({
-            'subject': {
-                'reference': patient.id
-            },
-            'content': {
-                'reference': allergyIntolerance.id
-            }
-        });
-        proto.control.push(new Triplet(node, new Act(allergyIntolerance), templateId));
+        var allergiesSection = ['2.16.840.1.113883.10.20.22.2.6', '2.16.840.1.113883.10.20.22.2.6.1'];
+        if (isInContextOf(allergiesSection)) {
+
+            patient = findPatient(proto.bundle);
+            var allergyIntolerance = {
+                'resourceType': 'AllergyIntolerance',
+                'id': 'AllergyIntolerance/' + (serial++).toString(),
+                'patient': {
+                    'reference': patient.id
+                }
+            };
+
+            proto.bundle.entry.push({
+                'resource': allergyIntolerance
+            });
+            proto.composition.section.push({
+                'subject': {
+                    'reference': patient.id
+                },
+                'content': {
+                    'reference': allergyIntolerance.id
+                }
+            });
+            proto.control.push(new Triplet(node, new Act(allergyIntolerance), templateId));
+
+        } else if (isInContextOf('2.16.840.1.113883.10.20.22.2.18')) {
+
+            patient = findPatient(proto.bundle);
+            var claim = {
+                'resourceType': 'Claim',
+                'id': 'Claim/' + (serial++).toString(),
+                'patient': {
+                    'reference': patient.id
+                }
+            };
+
+            proto.bundle.entry.push({
+                'resource': claim
+            });
+            proto.composition.section.push({
+                'subject': {
+                    'reference': patient.id
+                },
+                'content': {
+                    'reference': claim.id
+                }
+            });
+            proto.control.push(new Triplet(node, new Act(claim), templateId));
+        }
     };
 
     //Part of FAIMLY HSTORY
@@ -1480,6 +1876,32 @@ var Entry = function (resource) {
 
     this.supply = function (node) {
         proto.control.push(new Triplet(node, new Supply(resource), templateId));
+    };
+
+    this.observation = function (node) {
+        var patient = findPatient(proto.bundle);
+        var observation = getResource('Observaton', {
+            'id': 'Observation/' + (serial++).toString(),
+            'patient': {
+                'reference': patient.id
+            }
+        });
+        proto.bundle.entry.push({
+            'resource': observation
+        });
+        proto.composition.section.push({
+            'subject': {
+                'reference': patient.id
+            },
+            'content': {
+                'reference': observation.id
+            }
+        });
+        proto.control.push(new Triplet(node, new Observation(null, observation), templateId));
+    };
+
+    this.obj = function () {
+        return (this._self) ? this._self : this;
     };
 
 };
