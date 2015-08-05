@@ -736,19 +736,19 @@ Participant.prototype = proto;
 
 var ObservationRangeValue = function (resource) {
 
-    this.low = function(node) {
+    this.low = function (node) {
         resource.low = {
-                    'value': node.attributes.value,
-                    'units': node.attributes.unit
-                };
-  
+            'value': node.attributes.value,
+            'units': node.attributes.unit
+        };
+
     };
-    
+
     this.high = function (node) {
         resource.high = {
-                    'value': node.attributes.value,
-                    'units': node.attributes.unit
-                };
+            'value': node.attributes.value,
+            'units': node.attributes.unit
+        };
     };
 
 };
@@ -756,14 +756,14 @@ ObservationRangeValue.prototype = proto;
 
 var ObservationRange = function (resource) {
 
-    this.value = function(node) {
-        switch(node.attributes['xsi:type']) {
-            case 'IVL_PQ':
+    this.value = function (node) {
+        switch (node.attributes['xsi:type']) {
+        case 'IVL_PQ':
             proto.control.push(new Triplet(node, new ObservationRangeValue(resource)));
             break;
-        }   
+        }
     };
-    
+
     this.text$ = function (text) {
         resource.text = text;
     };
@@ -2423,15 +2423,52 @@ saxStream.on("text", function (node) {
 
 //We are done, print result
 saxStream.on("end", function () {
-    console.timeEnd('sax'); //Done, check the time
+    //console.timeEnd('sax'); //Done, check the time
     //console.log(proto.control.length);
     console.log(JSON.stringify(makeTransactionalBundle(last.get(), 'http://localhost:8080/fhir/base'), null, ' '));
 });
 
 //No work yet done before this point, just definitions
-console.time('sax');
+//console.time('sax');
+
+var Transform = require("stream").Transform;
+var util = require("util");
+
+function CcdaParserStream() {
+    Transform.call(this, {
+        "objectMode": true
+    }); // invoke Transform's constructor, expected result is object
+}
+
+util.inherits(CcdaParserStream, Transform); // inherit Transform
+
+/**
+ * @Function _transform
+ * Define standart Transform Stream's function _transform
+ * @param (String) line - input line
+ * @param (String) encoding - encoding (not used now)
+ * @param cb - callback to notify that we are done with a row
+ */
+CcdaParserStream.prototype._transform = function (line, encoding, cb) {
+    saxStream.write(line);
+    cb();
+};
+
+/**
+ * @Function _flush
+ * Define standart Transform Stream's function _flush
+ * Normally in should push parsed result (or error) to a pipe
+ * @param cb - callback to notify that we are done
+ */
+CcdaParserStream.prototype._flush = function (cb) {
+    console.log(last.get());
+    this.push(last.get());
+    cb();
+};
 
 //Just create a copy of input file while producing data organized in a bundle 
-fs.createReadStream(__dirname + '/test/artifacts/bluebutton-01-original.xml')
-    .pipe(saxStream)
-    .pipe(fs.createWriteStream("file-copy.xml"));
+//fs.createReadStream(__dirname + '/test/artifacts/bluebutton-01-original.xml')
+//    .pipe(new CcdaParserStream())
+//    .pipe(fs.createWriteStream("file-copy.xml"));
+
+module.export = CcdaParserStream;
