@@ -17,7 +17,7 @@ describe('parser.js', function () {
             .pipe(new bbcms.CcdaParserStream())
             .on('data', function (data) {
                 expect(data).to.exist;
-                fs.writeFile(__dirname + '/artifacts/bluebutton-01-original.json', JSON.stringify(data, null, '    '));
+                fs.writeFile(__dirname + '/artifacts/bluebutton-01-original.json', JSON.stringify(data, null, '  '));
             })
             .on('finish', function () {
                 done();
