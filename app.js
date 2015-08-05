@@ -734,8 +734,36 @@ var Participant = function (resource) {
 };
 Participant.prototype = proto;
 
+var ObservationRangeValue = function (resource) {
+
+    this.low = function(node) {
+        resource.low = {
+                    'value': node.attributes.value,
+                    'units': node.attributes.unit
+                };
+  
+    };
+    
+    this.high = function (node) {
+        resource.high = {
+                    'value': node.attributes.value,
+                    'units': node.attributes.unit
+                };
+    };
+
+};
+ObservationRangeValue.prototype = proto;
+
 var ObservationRange = function (resource) {
 
+    this.value = function(node) {
+        switch(node.attributes['xsi:type']) {
+            case 'IVL_PQ':
+            proto.control.push(new Triplet(node, new ObservationRangeValue(resource)));
+            break;
+        }   
+    };
+    
     this.text$ = function (text) {
         resource.text = text;
     };
