@@ -1,5 +1,5 @@
 {
-  "name": "cms-fhir",
+  "name": "cda-fhir",
   "version": "0.9.1",
   "description": "Blue Button CMS Parser",
   "main": "./index.js",
