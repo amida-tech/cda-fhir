@@ -1,6 +1,6 @@
 {
-  "name": "blue-button-cms",
-  "version": "1.5.1-beta.1",
+  "name": "cms-fhir",
+  "version": "0.9.1",
   "description": "Blue Button CMS Parser",
   "main": "./index.js",
   "directories": {
@@ -31,12 +31,10 @@
   },
   "dependencies": {
     "lodash": "~3.10.0",
-    "node-uuid": "~1.4.3",
-    "xml-stream": "*",
+    "sax": "*",
     "dev-null": "*" 
   },
   "devDependencies": {
-    "blue-button-model": "1.5.0-beta.3",
     "brfs": "~1.4.0",
     "chai": "~2.3.0",
     "coveralls": "~2.11.2",
