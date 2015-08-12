@@ -128,15 +128,6 @@ module.exports = function (grunt) {
                     hostname: '127.0.0.1'
                 }
             }
-        },
-        'mocha_phantomjs': {
-            all: {
-                options: {
-                    urls: [
-                        'http://127.0.0.1:8000/dist/mocha_runner.html'
-                    ]
-                }
-            }
         }
     });
 
