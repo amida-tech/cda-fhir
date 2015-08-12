@@ -8,15 +8,15 @@ var fs = require('fs');
 var bbcms = require("../index");
 
 describe('CCDA parser test', function () {
-    
+
     var istream;
-    
-    before(function() {
+
+    before(function () {
         istream = fs.createReadStream(__dirname + '/artifacts/bluebutton-01-original.xml', 'utf-8');
     });
-    
+
     it('bluebutton-01-original.xml as input', function (done) {
-        
+
         expect(istream).to.exist;
 
         istream
@@ -42,16 +42,14 @@ describe('CCDA parser test', function () {
         istream
             .pipe(new bbcms.CcdaParserStream())
             .on('data', function (data) {
-                if( !(data instanceof Error) ) {
+                if (!(data instanceof Error)) {
                     done('Error object expected');
                 } else {
                     done();
                 }
             })
-            .on('finish', function () {
-            })
-            .on('error', function (error) {
-            });
+            .on('finish', function () {})
+            .on('error', function (error) {});
 
     });
 });
