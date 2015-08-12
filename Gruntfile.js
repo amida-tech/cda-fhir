@@ -3,24 +3,6 @@
 var bbcms = require('./index');
 var path = require('path');
 
-var generateChangeDetectionFiles = function (grunt) {
-    var srcs = [
-        'test/fixtures/sample.txt',
-    ];
-    var dest = 'test/fixtures/generated';
-
-    srcs.forEach(function (src) {
-        var content = grunt.file.read(src);
-        var result = bbcms.parseText(content);
-
-        var baseName = path.basename(src, path.extname(src));
-        var destName = baseName + '.json';
-        var destPath = path.join(dest, destName);
-        var destContent = JSON.stringify(result, undefined, 2);
-        grunt.file.write(destPath, destContent);
-    });
-};
-
 module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
