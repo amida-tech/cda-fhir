@@ -9,14 +9,9 @@ var bbcms = require("../index");
 
 describe('CCDA parser test', function () {
 
-    var istream;
-
-    before(function () {
-        istream = fs.createReadStream(__dirname + '/artifacts/bluebutton-01-original.xml', 'utf-8');
-    });
-
     it('bluebutton-01-original.xml as input', function (done) {
 
+        var istream = fs.createReadStream(__dirname + '/artifacts/bluebutton-01-original.xml', 'utf-8');
         expect(istream).to.exist;
 
         istream
@@ -24,6 +19,27 @@ describe('CCDA parser test', function () {
             .on('data', function (data) {
                 expect(data).to.exist;
                 fs.writeFile(__dirname + '/artifacts/bluebutton-01-original.json', JSON.stringify(data, null, '  '));
+            })
+            .on('finish', function () {
+                done();
+            })
+            .on('error', function (error) {
+                done(error);
+            });
+
+    });
+
+
+    it('Vitera_CCDA_SMART_Sample.xml as input', function (done) {
+
+	var request = require('request');
+        var data = request.get('https://raw.githubusercontent.com/chb/sample_ccdas/master/Vitera/Vitera_CCDA_SMART_Sample.xml');
+
+        data
+            .pipe(new bbcms.CcdaParserStream())
+            .on('data', function (data) {
+                expect(data).to.exist;
+                fs.writeFile(__dirname + '/artifacts/Vitera_CCDA_SMART_Sample.json', JSON.stringify(data, null, '  '));
             })
             .on('finish', function () {
                 done();

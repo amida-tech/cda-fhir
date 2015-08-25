@@ -44,6 +44,7 @@
     "grunt-jsbeautifier": "~0.2.10",
     "grunt-mocha-test": "~0.12.7",
     "mocha": "~2.2.4",
+    "request": "~2.61.0",
     "istanbul": "*",
     "mocha-lcov-reporter": "0.0.2"
   },
