@@ -768,7 +768,9 @@
           },
           {
             "identifier": [
-              "329fcdf0-7ab3-11db-9fe1-0800200c9a66"
+              {
+                "value": "329fcdf0-7ab3-11db-9fe1-0800200c9a66"
+              }
             ],
             "relationship": {
               "coding": [
@@ -1006,7 +1008,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "2a620155-9d11-439e-92b3-5d9815ff4de8"
+          {
+            "value": "2a620155-9d11-439e-92b3-5d9815ff4de8"
+          }
         ],
         "type": {
           "coding": [
@@ -1065,7 +1069,9 @@
         "resourceType": "Practitioner",
         "id": "Practitioner/7",
         "identifier": [
-          "PseduoMD-3"
+          {
+            "value": "PseduoMD-3"
+          }
         ],
         "practitionerRole": [
           {
@@ -1162,7 +1168,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "c6b5a04b-2bf4-49d1-8336-636a3813df0a"
+          {
+            "value": "c6b5a04b-2bf4-49d1-8336-636a3813df0a"
+          }
         ],
         "code": {
           "coding": [
@@ -1202,7 +1210,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "c6b5a04b-2bf4-49d1-8336-636a3813df0a"
+          {
+            "value": "c6b5a04b-2bf4-49d1-8336-636a3813df0a"
+          }
         ],
         "code": {
           "coding": [
@@ -1290,7 +1300,9 @@
         "resourceType": "Practitioner",
         "id": "Practitioner/14",
         "identifier": [
-          "2.16.840.1.113883.19.5.9999.456"
+          {
+            "value": "2.16.840.1.113883.19.5.9999.456"
+          }
         ],
         "address": [
           {
@@ -1385,7 +1397,9 @@
         "resourceType": "Practitioner",
         "id": "Practitioner/18",
         "identifier": [
-          "2.16.840.1.113883.19.5.9999.456"
+          {
+            "value": "2.16.840.1.113883.19.5.9999.456"
+          }
         ],
         "address": [
           {
@@ -1480,7 +1494,9 @@
         "resourceType": "Practitioner",
         "id": "Practitioner/22",
         "identifier": [
-          "2.16.840.1.113883.19.5.9999.456"
+          {
+            "value": "2.16.840.1.113883.19.5.9999.456"
+          }
         ],
         "address": [
           {
@@ -1588,7 +1604,9 @@
         "resourceType": "Practitioner",
         "id": "Practitioner/26",
         "identifier": [
-          "2.16.840.1.113883.19.5.9999.456"
+          {
+            "value": "2.16.840.1.113883.19.5.9999.456"
+          }
         ],
         "address": [
           {
@@ -1639,7 +1657,9 @@
         },
         "status": "available",
         "identifier": [
-          "2413773c-2372-4299-bbe6-5b0f60664489"
+          {
+            "value": "2413773c-2372-4299-bbe6-5b0f60664489"
+          }
         ],
         "type": {
           "coding": [
@@ -1661,7 +1681,9 @@
         },
         "status": "available",
         "identifier": [
-          "eb936010-7b17-11db-9fe1-0800200c9a68"
+          {
+            "value": "eb936010-7b17-11db-9fe1-0800200c9a68"
+          }
         ],
         "type": {
           "coding": [
@@ -1683,7 +1705,9 @@
         },
         "status": "available",
         "identifier": [
-          "eb936010-7b17-11db-9fe1-0800200c9a68"
+          {
+            "value": "eb936010-7b17-11db-9fe1-0800200c9a68"
+          }
         ],
         "type": {
           "coding": [
@@ -1900,7 +1924,9 @@
         "resourceType": "Practitioner",
         "id": "Practitioner/40",
         "identifier": [
-          "2a620155-9d11-439e-92b3-5d9815fe4de8"
+          {
+            "value": "2a620155-9d11-439e-92b3-5d9815fe4de8"
+          }
         ],
         "name": [
           {
@@ -1930,8 +1956,12 @@
           }
         ],
         "identifier": [
-          "14d4a520-7aae-11db-9fe1-0800200c9a66",
-          "2.16.840.1.113883.19"
+          {
+            "value": "14d4a520-7aae-11db-9fe1-0800200c9a66"
+          },
+          {
+            "value": "2.16.840.1.113883.19"
+          }
         ],
         "name": "Everyman",
         "item": [
@@ -1947,7 +1977,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "2.16.840.1.113883.19"
+          {
+            "value": "2.16.840.1.113883.19"
+          }
         ],
         "issuer": {
           "reference": "Organization/43"
@@ -2108,7 +2140,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"
+          {
+            "value": "ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"
+          }
         ],
         "code": {
           "coding": [
@@ -2151,7 +2185,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "ab1791b0-5c71-11db-b0de-0800200c9a66"
+          {
+            "value": "ab1791b0-5c71-11db-b0de-0800200c9a66"
+          }
         ],
         "code": {
           "coding": [
@@ -2186,7 +2222,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"
+          {
+            "value": "ec8a6ff8-ed4b-4f7e-82c3-e98e58b45de7"
+          }
         ],
         "code": {
           "coding": [
@@ -2229,7 +2267,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "ab1791b0-5c71-11db-b0de-0800200c9a66"
+          {
+            "value": "ab1791b0-5c71-11db-b0de-0800200c9a66"
+          }
         ],
         "code": {
           "coding": [
@@ -2264,7 +2304,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "d68b7e32-7810-4f5b-9cc2-acd54b0fd85d"
+          {
+            "value": "d68b7e32-7810-4f5b-9cc2-acd54b0fd85d"
+          }
         ],
         "type": {
           "coding": [
@@ -2317,7 +2359,9 @@
         "resourceType": "Practitioner",
         "id": "Practitioner/55",
         "identifier": [
-          "2.16.840.1.113883.19.5.9999.456"
+          {
+            "value": "2.16.840.1.113883.19.5.9999.456"
+          }
         ],
         "address": [
           {
@@ -2380,7 +2424,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "742aee30-21c5-11e1-bfc2-0800200c9a66"
+          {
+            "value": "742aee30-21c5-11e1-bfc2-0800200c9a66"
+          }
         ],
         "type": {
           "coding": [
@@ -2401,7 +2447,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "2.16.840.1.113883.19"
+          {
+            "value": "2.16.840.1.113883.19"
+          }
         ],
         "code": {
           "coding": [
@@ -2436,7 +2484,9 @@
         "resourceType": "Practitioner",
         "id": "Practitioner/59",
         "identifier": [
-          "2.16.840.1.113883.19.5"
+          {
+            "value": "2.16.840.1.113883.19.5"
+          }
         ],
         "address": [
           {
@@ -2507,7 +2557,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "107c2dc0-67a5-11db-bd13-0800200c9a66"
+          {
+            "value": "107c2dc0-67a5-11db-bd13-0800200c9a66"
+          }
         ],
         "code": {
           "coding": [
@@ -2545,7 +2597,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "107c2dc0-67a5-11db-bd13-0800200c9a66"
+          {
+            "value": "107c2dc0-67a5-11db-bd13-0800200c9a66"
+          }
         ],
         "code": {
           "coding": [
@@ -2590,7 +2644,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "107c2dc0-67a5-11db-bd13-0800200c9a66"
+          {
+            "value": "107c2dc0-67a5-11db-bd13-0800200c9a66"
+          }
         ],
         "code": {
           "coding": [
@@ -2635,7 +2691,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "2.16.840.1.113883.19"
+          {
+            "value": "2.16.840.1.113883.19"
+          }
         ],
         "code": {
           "coding": [
@@ -2669,7 +2727,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "9b56c25d-9104-45ee-9fa4-e0f3afaa01c1"
+          {
+            "value": "9b56c25d-9104-45ee-9fa4-e0f3afaa01c1"
+          }
         ],
         "code": {
           "coding": [
@@ -2696,7 +2756,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "45efb604-7049-4a2e-ad33-d38556c9636c"
+          {
+            "value": "45efb604-7049-4a2e-ad33-d38556c9636c"
+          }
         ],
         "code": {
           "coding": [
@@ -2722,7 +2784,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "37f76c51-6411-4e1d-8a37-957fd49d2cef"
+          {
+            "value": "37f76c51-6411-4e1d-8a37-957fd49d2cef"
+          }
         ],
         "code": {
           "coding": [
@@ -2748,7 +2812,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "c6f88321-67ad-11db-bd13-0800200c9a66"
+          {
+            "value": "c6f88321-67ad-11db-bd13-0800200c9a66"
+          }
         ],
         "code": {
           "coding": [
@@ -2783,7 +2849,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "c6f88321-67ad-11db-bd13-0800200c9a66"
+          {
+            "value": "c6f88321-67ad-11db-bd13-0800200c9a66"
+          }
         ],
         "code": {
           "coding": [
@@ -2818,7 +2886,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "c6f88321-67ad-11db-bd13-0800200c9a66"
+          {
+            "value": "c6f88321-67ad-11db-bd13-0800200c9a66"
+          }
         ],
         "code": {
           "coding": [
@@ -2853,7 +2923,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "c6f88321-67ad-11db-bd13-0800200c9a66"
+          {
+            "value": "c6f88321-67ad-11db-bd13-0800200c9a66"
+          }
         ],
         "code": {
           "coding": [
@@ -2888,7 +2960,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "c6f88321-67ad-11db-bd13-0800200c9a66"
+          {
+            "value": "c6f88321-67ad-11db-bd13-0800200c9a66"
+          }
         ],
         "code": {
           "coding": [
@@ -2923,7 +2997,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "c6f88321-67ad-11db-bd13-0800200c9a66"
+          {
+            "value": "c6f88321-67ad-11db-bd13-0800200c9a66"
+          }
         ],
         "code": {
           "coding": [
@@ -2958,7 +3034,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "c6f88321-67ad-11db-bd13-0800200c9a66"
+          {
+            "value": "c6f88321-67ad-11db-bd13-0800200c9a66"
+          }
         ],
         "code": {
           "coding": [
@@ -2993,7 +3071,9 @@
           "reference": "Patient/1"
         },
         "identifier": [
-          "c6f88321-67ad-11db-bd13-0800200c9a66"
+          {
+            "value": "c6f88321-67ad-11db-bd13-0800200c9a66"
+          }
         ],
         "code": {
           "coding": [
