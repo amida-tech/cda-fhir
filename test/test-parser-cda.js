@@ -9,7 +9,7 @@ var bbcms = require("../index");
 
 describe('CCDA parser test', function () {
 
-    it('bluebutton-01-original.xml as input', function (done) {
+    it('"bluebutton-01-original.xml" as input', function (done) {
 
         var istream = fs.createReadStream(__dirname + '/artifacts/bluebutton-01-original.xml', 'utf-8');
         expect(istream).to.exist;
@@ -19,6 +19,10 @@ describe('CCDA parser test', function () {
             .on('data', function (data) {
                 expect(data).to.exist;
                 fs.writeFile(__dirname + '/artifacts/bluebutton-01-original.json', JSON.stringify(data, null, '  '));
+             
+                var gold = fs.readFileSync(__dirname + '/artifacts/bluebutton-01-original-gold.json', 'utf-8');
+                expect(JSON.parse(gold)).to.eql(data);
+                
             })
             .on('finish', function () {
                 done();
@@ -30,7 +34,7 @@ describe('CCDA parser test', function () {
     });
 
 
-    it('Vitera_CCDA_SMART_Sample.xml as input', function (done) {
+    it('"Vitera_CCDA_SMART_Sample.xml" as input', function (done) {
 
 	var request = require('request');
         var data = request.get('https://raw.githubusercontent.com/chb/sample_ccdas/master/Vitera/Vitera_CCDA_SMART_Sample.xml');
@@ -50,6 +54,47 @@ describe('CCDA parser test', function () {
 
     });
 
+
+    it('"Enterprise EHR/b2 Adam Everyman ToC.xml" as input', function (done) {
+
+	var request = require('request');
+        var data = request.get('https://raw.githubusercontent.com/chb/sample_ccdas/master/Allscripts%20Samples/Enterprise%20EHR/b2%20Adam%20Everyman%20ToC.xml');
+
+        data
+            .pipe(new bbcms.CcdaParserStream())
+            .on('data', function (data) {
+                expect(data).to.exist;
+                fs.writeFile(__dirname + '/artifacts/b2_Adam_Everyman_ToC.json', JSON.stringify(data, null, '  '));
+            })
+            .on('finish', function () {
+                done();
+            })
+            .on('error', function (error) {
+                done(error);
+            });
+
+    });
+    
+    it('"170.314(e)(2)AMB_SummaryOfCare CED Type.xml" as input', function (done) {
+
+	var request = require('request');
+        var data = request.get('https://raw.githubusercontent.com/chb/sample_ccdas/master/Allscripts%20Samples/Internal%20Test%20with%20MU%202%20data/170.314(e)(2)AMB_SummaryOfCare%20CED%20Type.xml');
+
+        data
+            .pipe(new bbcms.CcdaParserStream())
+            .on('data', function (data) {
+                expect(data).to.exist;
+                fs.writeFile(__dirname + '/artifacts/170_314_e__2_AMB_SummaryOfCare_CED_Type.xml.json', JSON.stringify(data, null, '  '));
+            })
+            .on('finish', function () {
+                done();
+            })
+            .on('error', function (error) {
+                done(error);
+            });
+
+    });
+    
     it('buggy input', function (done) {
         var istream = fs.createReadStream(__dirname + '/test-parser-cda.js', 'utf-8');
 
