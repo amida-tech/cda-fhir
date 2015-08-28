@@ -1254,7 +1254,6 @@
         "patient": {
           "reference": "Patient/1"
         },
-        "wasNotGiven": true,
         "status": "completed",
         "date": "1999-11",
         "route": {
@@ -1448,7 +1447,6 @@
         "patient": {
           "reference": "Patient/1"
         },
-        "wasNotGiven": true,
         "status": "completed",
         "date": "1998-12-15",
         "route": {
