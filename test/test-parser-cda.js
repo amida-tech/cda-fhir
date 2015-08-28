@@ -84,7 +84,27 @@ describe('CCDA parser test', function () {
             .pipe(new bbcms.CcdaParserStream())
             .on('data', function (data) {
                 expect(data).to.exist;
-                fs.writeFile(__dirname + '/artifacts/170_314_e__2_AMB_SummaryOfCare_CED_Type.xml.json', JSON.stringify(data, null, '  '));
+                fs.writeFile(__dirname + '/artifacts/170_314_e__2_AMB_SummaryOfCare_CED_Type.json', JSON.stringify(data, null, '  '));
+            })
+            .on('finish', function () {
+                done();
+            })
+            .on('error', function (error) {
+                done(error);
+            });
+
+    });
+    
+    it('"sample_ccdas/HL7 Samples/CCD.sample.xml" as input', function (done) {
+
+	var request = require('request');
+        var data = request.get('https://raw.githubusercontent.com/chb/sample_ccdas/master/HL7%20Samples/CCD.sample.xml');
+
+        data
+            .pipe(new bbcms.CcdaParserStream())
+            .on('data', function (data) {
+                expect(data).to.exist;
+                fs.writeFile(__dirname + '/CCD_sample.json', JSON.stringify(data, null, '  '));
             })
             .on('finish', function () {
                 done();
