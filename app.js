@@ -13,7 +13,10 @@ var bbcms = require("./index");
 
 console.time('--> CcdaParserStream');
 
-var istream = fs.createReadStream(__dirname + '/test/artifacts/bluebutton-01-original.xml', 'utf-8');
+var request = require('request');
+var istream = request.get('https://raw.githubusercontent.com/chb/sample_ccdas/master/Vitera/Vitera_CCDA_SMART_Sample.xml');
+
+//var istream = fs.createReadStream(__dirname + '/test/artifacts/bluebutton-01-original.xml', 'utf-8');
 
 istream
     .pipe(new bbcms.CcdaParserStream())
