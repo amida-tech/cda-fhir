@@ -89,6 +89,7 @@ module.exports = function (grunt) {
                     'lines': 50,
                     'functions': 50
                 },
+                timeout: '10000',
                 dir: 'coverage/',
                 root: '.'
             }
