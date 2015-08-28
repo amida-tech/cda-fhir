@@ -95,16 +95,16 @@ describe('CCDA parser test', function () {
 
     });
     
-    it('"sample_ccdas/HL7 Samples/CCD.sample.xml" as input', function (done) {
+    it('"CCD.sample.xml" as input', function (done) {
 
-	var request = require('request');
+	   var request = require('request');
         var data = request.get('https://raw.githubusercontent.com/chb/sample_ccdas/master/HL7%20Samples/CCD.sample.xml');
 
         data
             .pipe(new bbcms.CcdaParserStream())
             .on('data', function (data) {
                 expect(data).to.exist;
-                fs.writeFile(__dirname + '/CCD_sample.json', JSON.stringify(data, null, '  '));
+                fs.writeFile(__dirname + '/artifacts/CCD_sample.json', JSON.stringify(data, null, '  '));
             })
             .on('finish', function () {
                 done();
@@ -114,7 +114,27 @@ describe('CCDA parser test', function () {
             });
 
     });
-    
+   
+    it('"CCDA_CCD_b1_Ambulatory_v2.xml" as input', function (done) {
+
+	   var request = require('request');
+        var data = request.get('https://raw.githubusercontent.com/chb/sample_ccdas/master/NIST%20Samples/CCDA_CCD_b1_Ambulatory_v2.xml');
+
+        data
+            .pipe(new bbcms.CcdaParserStream())
+            .on('data', function (data) {
+                expect(data).to.exist;
+                fs.writeFile(__dirname + '/artifacts/CCDA_CCD_b1_Ambulatory_v2.json', JSON.stringify(data, null, '  '));
+            })
+            .on('finish', function () {
+                done();
+            })
+            .on('error', function (error) {
+                done(error);
+            });
+
+    });
+     
     it('buggy input', function (done) {
         var istream = fs.createReadStream(__dirname + '/test-parser-cda.js', 'utf-8');
 
