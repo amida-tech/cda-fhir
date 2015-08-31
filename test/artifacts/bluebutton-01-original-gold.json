@@ -668,7 +668,7 @@
             ]
           }
         ],
-        "gender": "F",
+        "gender": "female",
         "birthDate": "1975-05-01",
         "maritalStatus": {
           "coding": [
@@ -799,19 +799,17 @@
                 "value": "(781)555-1212"
               }
             ],
-            "name": {
-              "name": [
-                {
-                  "given": [
-                    "Adam",
-                    "Frankie"
-                  ],
-                  "family": [
-                    "Everyman"
-                  ]
-                }
-              ]
-            }
+            "name": [
+              {
+                "given": [
+                  "Adam",
+                  "Frankie"
+                ],
+                "family": [
+                  "Everyman"
+                ]
+              }
+            ]
           }
         ],
         "communication": [
