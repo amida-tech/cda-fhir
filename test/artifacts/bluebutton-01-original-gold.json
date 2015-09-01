@@ -2091,7 +2091,9 @@
         },
         "activity": [
           {
-            "reference": "ProcedureRequest/47"
+            "reference": {
+              "reference": "ProcedureRequest/47"
+            }
           },
           {
             "reference": "ProcedureRequest/48"
