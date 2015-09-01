@@ -2096,13 +2096,19 @@
             }
           },
           {
-            "reference": "ProcedureRequest/48"
+            "reference": {
+              "reference": "ProcedureRequest/48"
+            }
           },
           {
-            "reference": "ProcedureRequest/49"
+            "reference": {
+              "reference": "ProcedureRequest/49"
+            }
           },
           {
-            "reference": "ProcedureRequest/50"
+            "reference": {
+              "reference": "ProcedureRequest/50"
+            }
           }
         ]
       }
