@@ -2383,13 +2383,9 @@
           }
         ],
         "type": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "73761001",
-              "display": "Colonoscopy"
-            }
-          ]
+          "system": "http://snomed.info/sct",
+          "code": "73761001",
+          "display": "Colonoscopy"
         },
         "status": "completed",
         "performedDateTime": "2012-05-12",
