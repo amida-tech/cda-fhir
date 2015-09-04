@@ -2142,7 +2142,7 @@
         "subject": {
           "reference": "Patient/1"
         },
-        "code": {
+        "type": {
           "coding": [
             {
               "system": "http://snomed.info/sct",
@@ -2162,7 +2162,7 @@
         "subject": {
           "reference": "Patient/1"
         },
-        "code": {
+        "type": {
           "coding": [
             {
               "system": "http://snomed.info/sct",
@@ -2182,7 +2182,7 @@
         "subject": {
           "reference": "Patient/1"
         },
-        "code": {
+        "type": {
           "coding": [
             {
               "system": "http://snomed.info/sct",
