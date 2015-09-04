@@ -1154,9 +1154,11 @@
               ]
             },
             "outcome": {
-              "system": "http://snomed.info/sct",
-              "code": "419099009",
-              "display": "Dead"
+              "coding": {
+                "system": "http://snomed.info/sct",
+                "code": "419099009",
+                "display": "Dead"
+              }
             },
             "onsetAge": {
               "value": 57,
