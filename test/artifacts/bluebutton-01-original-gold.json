@@ -1154,11 +1154,13 @@
               ]
             },
             "outcome": {
-              "coding": {
-                "system": "http://snomed.info/sct",
-                "code": "419099009",
-                "display": "Dead"
-              }
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "419099009",
+                  "display": "Dead"
+                }
+              ]
             },
             "onsetAge": {
               "value": 57,
@@ -1198,6 +1200,15 @@
           {
             "item": [
               {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "code": "160237006",
+                      "display": "History/symptoms"
+                    }
+                  ]
+                },
                 "reference": "Observation/11"
               }
             ]
@@ -1258,6 +1269,15 @@
           {
             "item": [
               {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "code": "160237006",
+                      "display": "History/symptoms"
+                    }
+                  ]
+                },
                 "reference": "Observation/13"
               }
             ]
