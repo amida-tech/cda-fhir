@@ -1384,9 +1384,6 @@
             ]
           }
         ],
-        "managingOrganization": {
-          "reference": "Organization/17"
-        },
         "practitionerRole": [
           {
             "managingOrganization": {
@@ -1480,9 +1477,6 @@
             ]
           }
         ],
-        "managingOrganization": {
-          "reference": "Organization/21"
-        },
         "practitionerRole": [
           {
             "managingOrganization": {
@@ -1575,9 +1569,6 @@
             ]
           }
         ],
-        "managingOrganization": {
-          "reference": "Organization/25"
-        },
         "practitionerRole": [
           {
             "managingOrganization": {
@@ -1684,9 +1675,6 @@
             ]
           }
         ],
-        "managingOrganization": {
-          "reference": "Organization/29"
-        },
         "practitionerRole": [
           {
             "managingOrganization": {
@@ -1898,9 +1886,6 @@
       "resource": {
         "resourceType": "Practitioner",
         "id": "Practitioner/37",
-        "managingOrganization": {
-          "reference": "Organization/38"
-        },
         "practitionerRole": [
           {
             "managingOrganization": {
@@ -2449,9 +2434,6 @@
             "value": "555-555-5000"
           }
         ],
-        "managingOrganization": {
-          "reference": "Organization/58"
-        },
         "practitionerRole": [
           {
             "managingOrganization": {
@@ -2574,9 +2556,6 @@
             "value": "(555)555-555-1234"
           }
         ],
-        "managingOrganization": {
-          "reference": "Organization/62"
-        },
         "practitionerRole": [
           {
             "managingOrganization": {
