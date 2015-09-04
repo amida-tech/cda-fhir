@@ -2232,10 +2232,6 @@
           ]
         },
         "clinicalStatus": "completed",
-        "onsetPeriod": {
-          "start": "2008-01-03",
-          "end": "2008-01-03"
-        },
         "stage": {
           "assessment": [
             {
@@ -2252,7 +2248,8 @@
           "units": "a",
           "system": "http://snomed.info/sct",
           "code": "445518008"
-        }
+        },
+        "onsetDateTime": "2008-01-03"
       }
     },
     {
@@ -2314,10 +2311,6 @@
           ]
         },
         "clinicalStatus": "completed",
-        "onsetPeriod": {
-          "start": "2007-01-03",
-          "end": "2007-01-03"
-        },
         "stage": {
           "assessment": [
             {
@@ -2334,7 +2327,8 @@
           "units": "a",
           "system": "http://snomed.info/sct",
           "code": "445518008"
-        }
+        },
+        "onsetDateTime": "2007-01-03"
       }
     },
     {
