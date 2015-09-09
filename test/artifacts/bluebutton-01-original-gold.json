@@ -7,281 +7,176 @@
         "id": "Composition/0",
         "section": [
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Organization/2"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "AllergyIntolerance/3"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "AllergyIntolerance/4"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "AllergyIntolerance/5"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Encounter/6"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Practitioner/7"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Location/8"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "FamilyMemberHistory/9"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "ClinicalImpression/10"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Observation/11"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "ClinicalImpression/12"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Observation/13"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Immunization/14"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Organization/15"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Practitioner/16"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Organization/17"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Immunization/18"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Organization/19"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Practitioner/20"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Organization/21"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Immunization/22"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Organization/23"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Practitioner/24"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Organization/25"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Immunization/26"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Organization/27"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Practitioner/28"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Organization/29"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Device/30"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Device/31"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Device/32"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "MedicationPrescription/33"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "MedicationAdministration/34"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Medication/35"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Organization/36"
             }
@@ -295,185 +190,116 @@
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Organization/38"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Condition/39"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Medication/40"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Organization/41"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Practitioner/42"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Claim/43"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Coverage/44"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Organization/45"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "CarePlan/46"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "ProcedureRequest/47"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "ProcedureRequest/48"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "ProcedureRequest/49"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "ProcedureRequest/50"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "ClinicalImpression/51"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Condition/52"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Observation/53"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Condition/54"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Observation/55"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Procedure/56"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Practitioner/57"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Organization/58"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Device/59"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Observation/60"
             }
@@ -487,17 +313,11 @@
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Organization/62"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Location/63"
             }
@@ -527,97 +347,61 @@
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Observation/67"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Observation/68"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Observation/69"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Observation/70"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Observation/71"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Observation/72"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Observation/73"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Observation/74"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Observation/75"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Observation/76"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Observation/77"
             }
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
             "content": {
               "reference": "Observation/78"
             }
@@ -636,7 +420,10 @@
             }
           ]
         },
-        "title": "Community Health and Hospitals: Health Summary"
+        "title": "Community Health and Hospitals: Health Summary",
+        "subject": {
+          "reference": "Patient/1"
+        }
       }
     },
     {
@@ -1198,17 +985,17 @@
         },
         "investigations": [
           {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "160237006",
+                  "display": "History/symptoms"
+                }
+              ]
+            },
             "item": [
               {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://snomed.info/sct",
-                      "code": "160237006",
-                      "display": "History/symptoms"
-                    }
-                  ]
-                },
                 "reference": "Observation/11"
               }
             ]
@@ -1267,17 +1054,17 @@
         },
         "investigations": [
           {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "160237006",
+                  "display": "History/symptoms"
+                }
+              ]
+            },
             "item": [
               {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://snomed.info/sct",
-                      "code": "160237006",
-                      "display": "History/symptoms"
-                    }
-                  ]
-                },
                 "reference": "Observation/13"
               }
             ]
