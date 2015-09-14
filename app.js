@@ -35,7 +35,7 @@ istream
     .pipe(new bbcms.CcdaParserStream("test"))
     .on('data', function (data) {
 
-        console.log(JSON.stringify(makeTransactionalBundle(data,"http://localhost:8080/fhir","test"), null, '  '));
+        console.log(JSON.stringify(makeTransactionalBundle(data, "http://localhost:8080/fhir", "test"), null, '  '));
     })
     .on('finish', function () {
         console.timeEnd('--> CcdaParserStream');
