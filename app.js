@@ -14,7 +14,7 @@ var bbcms = require("./index");
 
 var makeTransactionalBundle = function (bundle, base, patientId) {
     _.each(bundle.entry, function (value) {
-        value.transaction = {
+        value.request = {
             'method': (value.resource.resourceType === 'Patient') ? 'PUT' : 'POST',
             'url': (value.resource.resourceType === 'Patient') ? 'Patient/' + patientId : value.resource.resourceType
         };
