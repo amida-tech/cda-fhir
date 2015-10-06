@@ -7,404 +7,536 @@
         "id": "Composition/0",
         "section": [
           {
-            "content": {
-              "reference": "Organization/2"
-            }
+            "entry": [
+              {
+                "reference": "Organization/2"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "AllergyIntolerance/3"
-            }
+            "entry": [
+              {
+                "reference": "AllergyIntolerance/3"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "AllergyIntolerance/4"
-            }
+            "entry": [
+              {
+                "reference": "AllergyIntolerance/4"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "AllergyIntolerance/5"
-            }
+            "entry": [
+              {
+                "reference": "AllergyIntolerance/5"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Encounter/6"
-            }
+            "entry": [
+              {
+                "reference": "Encounter/6"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Practitioner/7"
-            }
+            "entry": [
+              {
+                "reference": "Practitioner/7"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Location/8"
-            }
+            "entry": [
+              {
+                "reference": "Location/8"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "FamilyMemberHistory/9"
-            }
+            "entry": [
+              {
+                "reference": "FamilyMemberHistory/9"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "ClinicalImpression/10"
-            }
+            "entry": [
+              {
+                "reference": "ClinicalImpression/10"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Observation/11"
-            }
+            "entry": [
+              {
+                "reference": "Observation/11"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "ClinicalImpression/12"
-            }
+            "entry": [
+              {
+                "reference": "ClinicalImpression/12"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Observation/13"
-            }
+            "entry": [
+              {
+                "reference": "Observation/13"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Immunization/14"
-            }
+            "entry": [
+              {
+                "reference": "Immunization/14"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Organization/15"
-            }
+            "entry": [
+              {
+                "reference": "Organization/15"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Practitioner/16"
-            }
+            "entry": [
+              {
+                "reference": "Practitioner/16"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Organization/17"
-            }
+            "entry": [
+              {
+                "reference": "Organization/17"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Immunization/18"
-            }
+            "entry": [
+              {
+                "reference": "Immunization/18"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Organization/19"
-            }
+            "entry": [
+              {
+                "reference": "Organization/19"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Practitioner/20"
-            }
+            "entry": [
+              {
+                "reference": "Practitioner/20"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Organization/21"
-            }
+            "entry": [
+              {
+                "reference": "Organization/21"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Immunization/22"
-            }
+            "entry": [
+              {
+                "reference": "Immunization/22"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Organization/23"
-            }
+            "entry": [
+              {
+                "reference": "Organization/23"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Practitioner/24"
-            }
+            "entry": [
+              {
+                "reference": "Practitioner/24"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Organization/25"
-            }
+            "entry": [
+              {
+                "reference": "Organization/25"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Immunization/26"
-            }
+            "entry": [
+              {
+                "reference": "Immunization/26"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Organization/27"
-            }
+            "entry": [
+              {
+                "reference": "Organization/27"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Practitioner/28"
-            }
+            "entry": [
+              {
+                "reference": "Practitioner/28"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Organization/29"
-            }
+            "entry": [
+              {
+                "reference": "Organization/29"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Device/30"
-            }
+            "entry": [
+              {
+                "reference": "Device/30"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Device/31"
-            }
+            "entry": [
+              {
+                "reference": "Device/31"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Device/32"
-            }
+            "entry": [
+              {
+                "reference": "Device/32"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "MedicationPrescription/33"
-            }
+            "entry": [
+              {
+                "reference": "MedicationOrder/33"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "MedicationAdministration/34"
-            }
+            "entry": [
+              {
+                "reference": "MedicationAdministration/34"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Medication/35"
-            }
+            "entry": [
+              {
+                "reference": "Medication/35"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Organization/36"
-            }
+            "entry": [
+              {
+                "reference": "Organization/36"
+              }
+            ]
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
-            "content": {
-              "reference": "Practitioner/37"
-            }
+            "entry": [
+              {
+                "reference": "Practitioner/37"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Organization/38"
-            }
+            "entry": [
+              {
+                "reference": "Organization/38"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Condition/39"
-            }
+            "entry": [
+              {
+                "reference": "Condition/39"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Medication/40"
-            }
+            "entry": [
+              {
+                "reference": "Medication/40"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Organization/41"
-            }
+            "entry": [
+              {
+                "reference": "Organization/41"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Practitioner/42"
-            }
+            "entry": [
+              {
+                "reference": "Practitioner/42"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Claim/43"
-            }
+            "entry": [
+              {
+                "reference": "Claim/43"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Coverage/44"
-            }
+            "entry": [
+              {
+                "reference": "Coverage/44"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Organization/45"
-            }
+            "entry": [
+              {
+                "reference": "Organization/45"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "CarePlan/46"
-            }
+            "entry": [
+              {
+                "reference": "CarePlan/46"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "ProcedureRequest/47"
-            }
+            "entry": [
+              {
+                "reference": "ProcedureRequest/47"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "ProcedureRequest/48"
-            }
+            "entry": [
+              {
+                "reference": "ProcedureRequest/48"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "ProcedureRequest/49"
-            }
+            "entry": [
+              {
+                "reference": "ProcedureRequest/49"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "ProcedureRequest/50"
-            }
+            "entry": [
+              {
+                "reference": "ProcedureRequest/50"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "ClinicalImpression/51"
-            }
+            "entry": [
+              {
+                "reference": "ClinicalImpression/51"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Condition/52"
-            }
+            "entry": [
+              {
+                "reference": "Condition/52"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Observation/53"
-            }
+            "entry": [
+              {
+                "reference": "Condition/53"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Condition/54"
-            }
+            "entry": [
+              {
+                "reference": "Procedure/54"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Observation/55"
-            }
+            "entry": [
+              {
+                "reference": "Practitioner/55"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Procedure/56"
-            }
+            "entry": [
+              {
+                "reference": "Organization/56"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Practitioner/57"
-            }
+            "entry": [
+              {
+                "reference": "Device/57"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Organization/58"
-            }
+            "entry": [
+              {
+                "reference": "Procedure/58"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Device/59"
-            }
+            "entry": [
+              {
+                "reference": "Practitioner/59"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Observation/60"
-            }
+            "entry": [
+              {
+                "reference": "Organization/60"
+              }
+            ]
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
-            "content": {
-              "reference": "Practitioner/61"
-            }
+            "entry": [
+              {
+                "reference": "Device/61"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Organization/62"
-            }
+            "entry": [
+              {
+                "reference": "Location/62"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Location/63"
-            }
+            "entry": [
+              {
+                "reference": "Observation/63"
+              }
+            ]
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
-            "content": {
-              "reference": "Observation/64"
-            }
+            "entry": [
+              {
+                "reference": "Observation/64"
+              }
+            ]
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
-            "content": {
-              "reference": "Observation/65"
-            }
+            "entry": [
+              {
+                "reference": "Observation/65"
+              }
+            ]
           },
           {
-            "subject": {
-              "reference": "Patient/1"
-            },
-            "content": {
-              "reference": "Observation/66"
-            }
+            "entry": [
+              {
+                "reference": "Observation/66"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Observation/67"
-            }
+            "entry": [
+              {
+                "reference": "Observation/67"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Observation/68"
-            }
+            "entry": [
+              {
+                "reference": "Observation/68"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Observation/69"
-            }
+            "entry": [
+              {
+                "reference": "Observation/69"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Observation/70"
-            }
+            "entry": [
+              {
+                "reference": "Observation/70"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Observation/71"
-            }
+            "entry": [
+              {
+                "reference": "Observation/71"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Observation/72"
-            }
+            "entry": [
+              {
+                "reference": "Observation/72"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Observation/73"
-            }
+            "entry": [
+              {
+                "reference": "Observation/73"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Observation/74"
-            }
+            "entry": [
+              {
+                "reference": "Observation/74"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Observation/75"
-            }
+            "entry": [
+              {
+                "reference": "Observation/75"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Observation/76"
-            }
+            "entry": [
+              {
+                "reference": "Observation/76"
+              }
+            ]
           },
           {
-            "content": {
-              "reference": "Observation/77"
-            }
-          },
-          {
-            "content": {
-              "reference": "Observation/78"
-            }
+            "entry": [
+              {
+                "reference": "Observation/77"
+              }
+            ]
           }
         ],
         "type": {
@@ -496,7 +628,7 @@
             }
           },
           {
-            "url": "http://hl7.org/fhir/Profile/us-core#race",
+            "url": "http://hl7.org/fhir/Profile/us-core-race",
             "valueCodeableConcept": {
               "coding": [
                 {
@@ -508,7 +640,7 @@
             }
           },
           {
-            "url": "http://hl7.org/fhir/Profile/us-core#ethnicity",
+            "url": "http://hl7.org/fhir/Profile/us-core-ethnicity",
             "valueCodeableConcept": {
               "coding": [
                 {
@@ -570,14 +702,16 @@
             ]
           },
           {
-            "relationship": {
-              "coding": [
-                {
-                  "system": "urn:oid:2.16.840.1.113883.5.111",
-                  "code": "GUAR"
-                }
-              ]
-            },
+            "relationship": [
+              {
+                "coding": [
+                  {
+                    "system": "urn:oid:2.16.840.1.113883.5.111",
+                    "code": "GUAR"
+                  }
+                ]
+              }
+            ],
             "address": [
               {
                 "use": "home",
@@ -597,17 +731,15 @@
                 "value": "(781)555-1212"
               }
             ],
-            "name": [
-              {
-                "given": [
-                  "Adam",
-                  "Frankie"
-                ],
-                "family": [
-                  "Everyman"
-                ]
-              }
-            ]
+            "name": {
+              "given": [
+                "Adam",
+                "Frankie"
+              ],
+              "family": [
+                "Everyman"
+              ]
+            }
           }
         ],
         "communication": [
@@ -661,7 +793,7 @@
         },
         "status": "Inactive",
         "lastOccurence": "2007-05-01",
-        "event": [
+        "reaction": [
           {
             "onset": "2007-05-01",
             "manifestation": [
@@ -687,17 +819,15 @@
             "severity": "Moderate to severe"
           }
         ],
-        "substance": [
-          {
-            "coding": [
-              {
-                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-                "code": "314422",
-                "display": "ALLERGENIC EXTRACT, PENICILLIN"
-              }
-            ]
-          }
-        ]
+        "substance": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "314422",
+              "display": "ALLERGENIC EXTRACT, PENICILLIN"
+            }
+          ]
+        }
       }
     },
     {
@@ -709,7 +839,7 @@
         },
         "status": "Active",
         "lastOccurence": "2006-05-01",
-        "event": [
+        "reaction": [
           {
             "onset": "2006-05-01",
             "manifestation": [
@@ -735,17 +865,15 @@
             "severity": "Moderate"
           }
         ],
-        "substance": [
-          {
-            "coding": [
-              {
-                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-                "code": "2670",
-                "display": "Codeine"
-              }
-            ]
-          }
-        ]
+        "substance": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "2670",
+              "display": "Codeine"
+            }
+          ]
+        }
       }
     },
     {
@@ -757,7 +885,7 @@
         },
         "status": "Active",
         "lastOccurence": "2008-05-01",
-        "event": [
+        "reaction": [
           {
             "onset": "2008-05-01",
             "manifestation": [
@@ -783,17 +911,15 @@
             "severity": "Mild to moderate"
           }
         ],
-        "substance": [
-          {
-            "coding": [
-              {
-                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-                "code": "1191",
-                "display": "Aspirin"
-              }
-            ]
-          }
-        ]
+        "substance": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1191",
+              "display": "Aspirin"
+            }
+          ]
+        }
       }
     },
     {
@@ -808,20 +934,22 @@
             "value": "2a620155-9d11-439e-92b3-5d9815ff4de8"
           }
         ],
-        "type": {
-          "coding": [
-            {
-              "system": "http://www.ama-assn.org/go/cpt",
-              "code": "99213",
-              "display": "Office outpatient visit 15 minutes"
-            },
-            {
-              "system": "urn:oid:2.16.840.1.113883.5.4",
-              "code": "AMB",
-              "display": "Ambulatory"
-            }
-          ]
-        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "code": "99213",
+                "display": "Office outpatient visit 15 minutes"
+              },
+              {
+                "system": "urn:oid:2.16.840.1.113883.5.4",
+                "code": "AMB",
+                "display": "Ambulatory"
+              }
+            ]
+          }
+        ],
         "period": {
           "start": "2009-02-27T13:00:00",
           "end": "2009-02-27T13:00:00"
@@ -873,15 +1001,17 @@
         ],
         "practitionerRole": [
           {
-            "specialty": {
-              "coding": [
-                {
-                  "system": "http://snomed.info/sct",
-                  "code": "59058001",
-                  "display": "General Physician"
-                }
-              ]
-            }
+            "specialty": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "59058001",
+                    "display": "General Physician"
+                  }
+                ]
+              }
+            ]
           }
         ]
       }
@@ -918,20 +1048,22 @@
         "patient": {
           "reference": "Patient/1"
         },
-        "relationship": {
-          "coding": [
-            {
-              "system": "urn:oid:2.16.840.1.113883.5.111",
-              "code": "FTH",
-              "display": "Father"
-            }
-          ]
-        },
+        "relationship": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.5.111",
+                "code": "FTH",
+                "display": "Father"
+              }
+            ]
+          }
+        ],
         "gender": "male",
         "bornDate": "1910",
         "condition": [
           {
-            "type": {
+            "code": {
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
@@ -949,15 +1081,15 @@
                 }
               ]
             },
-            "onsetAge": {
+            "onsetQuantity": {
               "value": 57,
-              "units": "a",
+              "unit": "a",
               "system": "http://snomed.info/sct",
               "code": "445518008"
             }
           },
           {
-            "type": {
+            "code": {
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
@@ -966,9 +1098,9 @@
                 }
               ]
             },
-            "onsetAge": {
+            "onsetQuantity": {
               "value": 40,
-              "units": "a",
+              "unit": "a",
               "system": "http://snomed.info/sct",
               "code": "445518008"
             }
@@ -1025,7 +1157,7 @@
           ]
         },
         "status": "completed",
-        "appliesDateTime": "2009-03-11T12:30:00",
+        "effectiveDateTime": "2009-03-11T12:30:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -1094,7 +1226,7 @@
           ]
         },
         "status": "completed",
-        "appliesDateTime": "2009-03-11T12:30:00",
+        "effectiveDateTime": "2009-03-11T12:30:00",
         "valueCodeableConcept": {
           "coding": [
             {
@@ -1112,9 +1244,11 @@
             }
           ]
         },
-        "referenceRange": {
-          "text": "Non Aggressive to Aggressive"
-        }
+        "referenceRange": [
+          {
+            "text": "Non Aggressive to Aggressive"
+          }
+        ]
       }
     },
     {
@@ -1136,9 +1270,9 @@
         },
         "doseQuantity": {
           "value": 50,
-          "units": "mcg"
+          "unit": "mcg"
         },
-        "vaccineType": {
+        "vaccineCode": {
           "coding": [
             {
               "system": "http://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx",
@@ -1183,16 +1317,14 @@
             "country": "US"
           }
         ],
-        "name": [
-          {
-            "given": [
-              "Amanda"
-            ],
-            "family": [
-              "Assigned"
-            ]
-          }
-        ],
+        "name": {
+          "given": [
+            "Amanda"
+          ],
+          "family": [
+            "Assigned"
+          ]
+        },
         "practitionerRole": [
           {
             "managingOrganization": {
@@ -1229,9 +1361,9 @@
         },
         "doseQuantity": {
           "value": 50,
-          "units": "mcg"
+          "unit": "mcg"
         },
-        "vaccineType": {
+        "vaccineCode": {
           "coding": [
             {
               "system": "http://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx",
@@ -1276,16 +1408,14 @@
             "country": "US"
           }
         ],
-        "name": [
-          {
-            "given": [
-              "Amanda"
-            ],
-            "family": [
-              "Assigned"
-            ]
-          }
-        ],
+        "name": {
+          "given": [
+            "Amanda"
+          ],
+          "family": [
+            "Assigned"
+          ]
+        },
         "practitionerRole": [
           {
             "managingOrganization": {
@@ -1321,9 +1451,9 @@
         },
         "doseQuantity": {
           "value": 50,
-          "units": "mcg"
+          "unit": "mcg"
         },
-        "vaccineType": {
+        "vaccineCode": {
           "coding": [
             {
               "system": "http://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx",
@@ -1368,16 +1498,14 @@
             "country": "US"
           }
         ],
-        "name": [
-          {
-            "given": [
-              "Amanda"
-            ],
-            "family": [
-              "Assigned"
-            ]
-          }
-        ],
+        "name": {
+          "given": [
+            "Amanda"
+          ],
+          "family": [
+            "Assigned"
+          ]
+        },
         "practitionerRole": [
           {
             "managingOrganization": {
@@ -1414,9 +1542,9 @@
         },
         "doseQuantity": {
           "value": 50,
-          "units": "mcg"
+          "unit": "mcg"
         },
-        "vaccineType": {
+        "vaccineCode": {
           "coding": [
             {
               "system": "http://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx",
@@ -1433,7 +1561,7 @@
           "reference": "Practitioner/28"
         },
         "explanation": {
-          "resonNotGiven": [
+          "reasonNotGiven": [
             {
               "coding": [
                 {
@@ -1474,16 +1602,14 @@
             "country": "US"
           }
         ],
-        "name": [
-          {
-            "given": [
-              "Amanda"
-            ],
-            "family": [
-              "Assigned"
-            ]
-          }
-        ],
+        "name": {
+          "given": [
+            "Amanda"
+          ],
+          "family": [
+            "Assigned"
+          ]
+        },
         "practitionerRole": [
           {
             "managingOrganization": {
@@ -1574,14 +1700,14 @@
     },
     {
       "resource": {
-        "resourceType": "MedicationPrescription",
-        "id": "MedicationPrescription/33",
+        "resourceType": "MedicationOrder",
+        "id": "MedicationOrder/33",
         "patient": {
           "reference": "Patient/1"
         },
         "dosageInstruction": [
           {
-            "scheduledTiming": {
+            "timing": {
               "repeat": {
                 "period": "6",
                 "periodUnits": "h"
@@ -1593,7 +1719,7 @@
           "reference": "Condition/39"
         },
         "status": "completed",
-        "dispense": {
+        "dispenseRequest": {
           "validityPeriod": {
             "start": "2007-01-03"
           },
@@ -1602,7 +1728,7 @@
             "value": 75
           }
         },
-        "medication": {
+        "medicationReference": {
           "reference": "Medication/40"
         },
         "prescriber": {
@@ -1618,46 +1744,47 @@
           "reference": "Patient/1"
         },
         "prescription": {
-          "reference": "MedicationPrescription/33"
+          "reference": "MedicationOrder/33"
         },
-        "dosage": [
-          {
-            "route": {
-              "coding": [
-                {
-                  "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
-                  "code": "C38216",
-                  "display": "RESPIRATORY (INHALATION)"
-                }
-              ]
-            },
-            "quantity": {
-              "value": 1,
-              "units": "mg/actuat"
-            },
-            "rate": {
-              "numerator": {
-                "value": 90,
-                "units": "ml/min"
+        "dosage": {
+          "route": {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+                "code": "C38216",
+                "display": "RESPIRATORY (INHALATION)"
               }
+            ]
+          },
+          "quantity": {
+            "value": 1,
+            "unit": "mg/actuat"
+          },
+          "rateRatio": {
+            "numerator": {
+              "value": 90,
+              "unit": "ml/min"
             },
-            "method": {
-              "coding": [
-                {
-                  "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
-                  "code": "C42944",
-                  "display": "INHALANT"
-                }
-              ]
+            "denominator": {
+              "value": 1
             }
+          },
+          "method": {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.3.26.1.1",
+                "code": "C42944",
+                "display": "INHALANT"
+              }
+            ]
           }
-        ],
+        },
         "status": "completed",
         "effectiveTimePeriod": {
           "start": "2007-01-03",
           "end": "2012-05-15"
         },
-        "medication": {
+        "medicationReference": {
           "reference": "Medication/35"
         },
         "practitioner": {
@@ -1669,7 +1796,6 @@
       "resource": {
         "resourceType": "Medication",
         "id": "Medication/35",
-        "name": "Proventil HFA",
         "code": {
           "coding": [
             {
@@ -1677,7 +1803,8 @@
               "code": "219483",
               "display": "Proventil HFA"
             }
-          ]
+          ],
+          "text": "Proventil HFA"
         },
         "manufacturer": {
           "reference": "Organization/36"
@@ -1727,7 +1854,6 @@
             }
           ]
         },
-        "clinicalStatus": "completed",
         "onsetPeriod": {
           "start": "2007-01-03"
         },
@@ -1746,7 +1872,6 @@
       "resource": {
         "resourceType": "Medication",
         "id": "Medication/40",
-        "name": "Proventil 0.09 MG/ACTUAT inhalant solution",
         "code": {
           "coding": [
             {
@@ -1754,7 +1879,8 @@
               "code": "573621",
               "display": "Proventil 0.09 MG/ACTUAT inhalant solution"
             }
-          ]
+          ],
+          "text": "Proventil 0.09 MG/ACTUAT inhalant solution"
         },
         "manufacturer": {
           "reference": "Organization/41"
@@ -1777,16 +1903,14 @@
             "value": "2a620155-9d11-439e-92b3-5d9815fe4de8"
           }
         ],
-        "name": [
-          {
-            "given": [
-              "Henry"
-            ],
-            "family": [
-              "Seven"
-            ]
-          }
-        ]
+        "name": {
+          "given": [
+            "Henry"
+          ],
+          "family": [
+            "Seven"
+          ]
+        }
       }
     },
     {
@@ -1815,14 +1939,10 @@
         "item": [
           {
             "sequence": 1,
-            "type": {
-              "coding": [
-                {
-                  "system": "http://snomed.info/sct",
-                  "code": "73761001",
-                  "display": "Colonoscopy"
-                }
-              ]
+            "service": {
+              "system": "http://snomed.info/sct",
+              "code": "73761001",
+              "display": "Colonoscopy"
             }
           }
         ]
@@ -1875,7 +1995,7 @@
       "resource": {
         "resourceType": "CarePlan",
         "id": "CarePlan/46",
-        "patient": {
+        "subject": {
           "reference": "Patient/1"
         },
         "activity": [
@@ -1909,7 +2029,7 @@
         "subject": {
           "reference": "Patient/1"
         },
-        "type": {
+        "code": {
           "coding": [
             {
               "system": "http://snomed.info/sct",
@@ -1919,7 +2039,7 @@
           ]
         },
         "status": "new",
-        "timingDateTime": "2012-05-12"
+        "scheduledDateTime": "2012-05-12"
       }
     },
     {
@@ -1929,7 +2049,7 @@
         "subject": {
           "reference": "Patient/1"
         },
-        "type": {
+        "code": {
           "coding": [
             {
               "system": "http://snomed.info/sct",
@@ -1939,7 +2059,7 @@
           ]
         },
         "status": "new",
-        "timingDateTime": "2012-05-12"
+        "scheduledDateTime": "2012-05-12"
       }
     },
     {
@@ -1949,7 +2069,7 @@
         "subject": {
           "reference": "Patient/1"
         },
-        "type": {
+        "code": {
           "coding": [
             {
               "system": "http://snomed.info/sct",
@@ -1959,7 +2079,7 @@
           ]
         },
         "status": "new",
-        "timingDateTime": "2012-05-12"
+        "scheduledDateTime": "2012-05-12"
       }
     },
     {
@@ -1969,7 +2089,7 @@
         "subject": {
           "reference": "Patient/1"
         },
-        "type": {
+        "code": {
           "coding": [
             {
               "system": "http://snomed.info/sct",
@@ -1979,7 +2099,7 @@
           ]
         },
         "status": "new",
-        "timingDateTime": "2012-05-12"
+        "scheduledDateTime": "2012-05-12"
       }
     },
     {
@@ -1994,7 +2114,7 @@
             "reference": "Condition/52"
           },
           {
-            "reference": "Condition/54"
+            "reference": "Condition/53"
           }
         ]
       }
@@ -2012,29 +2132,23 @@
           }
         ],
         "code": {
-          "coding": [
-            {
-              "system": "urn:oid:2.16.840.1.113883.5.6",
-              "code": "CONC",
-              "display": "Concern"
-            }
-          ]
+          "coding": {
+            "system": "http://snomed.info/sct",
+            "code": "233604007",
+            "display": "Pneumonia"
+          }
         },
-        "clinicalStatus": "completed",
-        "stage": {
-          "assessment": [
-            {
-              "reference": "Observation/53"
-            }
-          ]
+        "clinicalStatus": "Resolved",
+        "category": {
+          "coding": {
+            "system": "http://snomed.info/sct",
+            "code": "409586006",
+            "display": "Complaint"
+          }
         },
-        "abatementPeriod": {
-          "start": "2008-01-03",
-          "end": "2009-02-27T13:00:00"
-        },
-        "onsetAge": {
+        "onsetQuantity": {
           "value": 57,
-          "units": "a",
+          "unit": "a",
           "system": "http://snomed.info/sct",
           "code": "445518008"
         },
@@ -2043,45 +2157,8 @@
     },
     {
       "resource": {
-        "resourceType": "Observation",
-        "id": "Observation/53",
-        "subject": {
-          "reference": "Patient/1"
-        },
-        "identifier": [
-          {
-            "value": "ab1791b0-5c71-11db-b0de-0800200c9a66"
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "409586006",
-              "display": "Complaint"
-            }
-          ]
-        },
-        "status": "completed",
-        "appliesPeriod": {
-          "start": "2008-01-03",
-          "end": "2008-01-03"
-        },
-        "valueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "233604007",
-              "display": "Pneumonia"
-            }
-          ]
-        }
-      }
-    },
-    {
-      "resource": {
         "resourceType": "Condition",
-        "id": "Condition/54",
+        "id": "Condition/53",
         "patient": {
           "reference": "Patient/1"
         },
@@ -2091,77 +2168,37 @@
           }
         ],
         "code": {
-          "coding": [
-            {
-              "system": "urn:oid:2.16.840.1.113883.5.6",
-              "code": "CONC",
-              "display": "Concern"
-            }
-          ]
-        },
-        "clinicalStatus": "completed",
-        "stage": {
-          "assessment": [
-            {
-              "reference": "Observation/55"
-            }
-          ]
-        },
-        "abatementPeriod": {
-          "start": "2008-01-03",
-          "end": "2009-02-27T13:00:00"
-        },
-        "onsetAge": {
-          "value": 57,
-          "units": "a",
-          "system": "http://snomed.info/sct",
-          "code": "445518008"
-        },
-        "onsetDateTime": "2007-01-03"
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Observation",
-        "id": "Observation/55",
-        "subject": {
-          "reference": "Patient/1"
-        },
-        "identifier": [
-          {
-            "value": "ab1791b0-5c71-11db-b0de-0800200c9a66"
+          "coding": {
+            "system": "http://snomed.info/sct",
+            "code": "195967001",
+            "display": "Asthma"
           }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "409586006",
-              "display": "Complaint"
-            }
-          ]
         },
-        "status": "completed",
-        "appliesPeriod": {
+        "clinicalStatus": "Active",
+        "onsetPeriod": {
           "start": "2007-01-03",
           "end": "2008-01-03"
         },
-        "valueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "195967001",
-              "display": "Asthma"
-            }
-          ]
+        "category": {
+          "coding": {
+            "system": "http://snomed.info/sct",
+            "code": "409586006",
+            "display": "Complaint"
+          }
+        },
+        "onsetQuantity": {
+          "value": 57,
+          "unit": "a",
+          "system": "http://snomed.info/sct",
+          "code": "445518008"
         }
       }
     },
     {
       "resource": {
         "resourceType": "Procedure",
-        "id": "Procedure/56",
-        "patient": {
+        "id": "Procedure/54",
+        "subject": {
           "reference": "Patient/1"
         },
         "identifier": [
@@ -2169,54 +2206,46 @@
             "value": "d68b7e32-7810-4f5b-9cc2-acd54b0fd85d"
           }
         ],
-        "type": {
-          "system": "http://snomed.info/sct",
-          "code": "73761001",
-          "display": "Colonoscopy"
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73761001",
+              "display": "Colonoscopy"
+            }
+          ]
         },
         "status": "completed",
         "performedDateTime": "2012-05-12",
         "bodySite": [
           {
-            "siteCodeableConcept": {
-              "coding": [
-                {
-                  "system": "urn:oid:2.16.840.1.113883.3.88.12.3221.8.9",
-                  "code": "appropriate_code",
-                  "display": "colon"
-                }
-              ]
-            }
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.3.88.12.3221.8.9",
+                "code": "appropriate_code",
+                "display": "colon"
+              }
+            ]
           }
         ],
         "performer": [
           {
-            "person": {
-              "reference": "Practitioner/57"
+            "actor": {
+              "reference": "Practitioner/55"
             }
           }
         ],
         "used": [
           {
-            "reference": "Device/59"
+            "reference": "Device/57"
           }
-        ],
-        "relatedItem": [
-          {
-            "target": {
-              "reference": "Observation/60"
-            }
-          }
-        ],
-        "location": {
-          "reference": "Location/63"
-        }
+        ]
       }
     },
     {
       "resource": {
         "resourceType": "Practitioner",
-        "id": "Practitioner/57",
+        "id": "Practitioner/55",
         "identifier": [
           {
             "value": "2.16.840.1.113883.19.5.9999.456"
@@ -2242,7 +2271,7 @@
         "practitionerRole": [
           {
             "managingOrganization": {
-              "reference": "Organization/58"
+              "reference": "Organization/56"
             }
           }
         ]
@@ -2251,7 +2280,7 @@
     {
       "resource": {
         "resourceType": "Organization",
-        "id": "Organization/58",
+        "id": "Organization/56",
         "name": "Community Health and Hospitals",
         "telecom": [
           {
@@ -2275,7 +2304,7 @@
     {
       "resource": {
         "resourceType": "Device",
-        "id": "Device/59",
+        "id": "Device/57",
         "patient": {
           "reference": "Patient/1"
         },
@@ -2297,8 +2326,8 @@
     },
     {
       "resource": {
-        "resourceType": "Observation",
-        "id": "Observation/60",
+        "resourceType": "Procedure",
+        "id": "Procedure/58",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2317,28 +2346,39 @@
           ]
         },
         "status": "aborted",
-        "appliesDateTime": "2011-02-03",
-        "valueString": "US",
-        "bodySiteCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "416949008",
-              "display": "Abdomen and pelvis"
-            }
-          ]
-        },
+        "performedDateTime": "2011-02-03",
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "416949008",
+                "display": "Abdomen and pelvis"
+              }
+            ]
+          }
+        ],
         "performer": [
           {
-            "reference": "Practitioner/61"
+            "actor": {
+              "reference": "Practitioner/59"
+            }
           }
-        ]
+        ],
+        "used": [
+          {
+            "reference": "Device/61"
+          }
+        ],
+        "location": {
+          "reference": "Location/62"
+        }
       }
     },
     {
       "resource": {
         "resourceType": "Practitioner",
-        "id": "Practitioner/61",
+        "id": "Practitioner/59",
         "identifier": [
           {
             "value": "2.16.840.1.113883.19.5"
@@ -2364,7 +2404,7 @@
         "practitionerRole": [
           {
             "managingOrganization": {
-              "reference": "Organization/62"
+              "reference": "Organization/60"
             }
           }
         ]
@@ -2373,14 +2413,23 @@
     {
       "resource": {
         "resourceType": "Organization",
-        "id": "Organization/62",
+        "id": "Organization/60",
         "name": "Community Health and Hospitals"
       }
     },
     {
       "resource": {
+        "resourceType": "Device",
+        "id": "Device/61",
+        "patient": {
+          "reference": "Patient/1"
+        }
+      }
+    },
+    {
+      "resource": {
         "resourceType": "Location",
-        "id": "Location/63",
+        "id": "Location/62",
         "type": {
           "coding": [
             {
@@ -2405,7 +2454,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Observation/64",
+        "id": "Observation/63",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2424,10 +2473,10 @@
           ]
         },
         "status": "completed",
-        "appliesDateTime": "2000-03-23T14:30:00",
+        "effectiveDateTime": "2000-03-23T14:30:00",
         "valueQuantity": {
           "value": "13.2",
-          "units": "g/dl"
+          "unit": "g/dl"
         },
         "interpretation": {
           "coding": [
@@ -2437,15 +2486,17 @@
             }
           ]
         },
-        "referenceRange": {
-          "text": "M 13-18 g/dl; F 12-16 g/dl"
-        }
+        "referenceRange": [
+          {
+            "text": "M 13-18 g/dl; F 12-16 g/dl"
+          }
+        ]
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Observation/65",
+        "id": "Observation/64",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2464,10 +2515,10 @@
           ]
         },
         "status": "completed",
-        "appliesDateTime": "2000-03-23T14:30:00",
+        "effectiveDateTime": "2000-03-23T14:30:00",
         "valueQuantity": {
           "value": "6.7",
-          "units": "10+3/ul"
+          "unit": "10+3/ul"
         },
         "interpretation": {
           "coding": [
@@ -2477,22 +2528,24 @@
             }
           ]
         },
-        "referenceRange": {
-          "low": {
-            "value": "4.3",
-            "units": "10+3/ul"
-          },
-          "high": {
-            "value": "10.8",
-            "units": "10+3/ul"
+        "referenceRange": [
+          {
+            "low": {
+              "value": "4.3",
+              "unit": "10+3/ul"
+            },
+            "high": {
+              "value": "10.8",
+              "unit": "10+3/ul"
+            }
           }
-        }
+        ]
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Observation/66",
+        "id": "Observation/65",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2511,10 +2564,10 @@
           ]
         },
         "status": "completed",
-        "appliesDateTime": "2000-03-23T14:30:00",
+        "effectiveDateTime": "2000-03-23T14:30:00",
         "valueQuantity": {
           "value": "123",
-          "units": "10+3/ul"
+          "unit": "10+3/ul"
         },
         "interpretation": {
           "coding": [
@@ -2524,22 +2577,24 @@
             }
           ]
         },
-        "referenceRange": {
-          "low": {
-            "value": "150",
-            "units": "10+3/ul"
-          },
-          "high": {
-            "value": "350",
-            "units": "10+3/ul"
+        "referenceRange": [
+          {
+            "low": {
+              "value": "150",
+              "unit": "10+3/ul"
+            },
+            "high": {
+              "value": "350",
+              "unit": "10+3/ul"
+            }
           }
-        }
+        ]
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Observation/67",
+        "id": "Observation/66",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2557,7 +2612,7 @@
           ]
         },
         "status": "completed",
-        "appliesPeriod": {
+        "effectivePeriod": {
           "start": "2005-05-01",
           "end": "2009-02-27T13:00:00"
         },
@@ -2575,7 +2630,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Observation/68",
+        "id": "Observation/67",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2594,7 +2649,7 @@
           ]
         },
         "status": "completed",
-        "appliesPeriod": {
+        "effectivePeriod": {
           "start": "2005-05-01",
           "end": "2009-02-27T13:00:00"
         },
@@ -2604,7 +2659,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Observation/69",
+        "id": "Observation/68",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2623,7 +2678,7 @@
           ]
         },
         "status": "completed",
-        "appliesPeriod": {
+        "effectivePeriod": {
           "start": "2009-02-27T13:00:00"
         },
         "valueString": "None"
@@ -2632,7 +2687,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Observation/70",
+        "id": "Observation/69",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2651,7 +2706,7 @@
           ]
         },
         "status": "completed",
-        "appliesPeriod": {
+        "effectivePeriod": {
           "start": "2005-05-01"
         },
         "valueString": "None"
@@ -2660,7 +2715,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Observation/71",
+        "id": "Observation/70",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2679,10 +2734,47 @@
           ]
         },
         "status": "completed",
-        "appliesDateTime": "1999-11-14",
+        "effectiveDateTime": "1999-11-14",
         "valueQuantity": {
           "value": "177",
-          "units": "cm"
+          "unit": "cm"
+        },
+        "interpretation": {
+          "coding": [
+            {
+              "system": "urn:oid:2.16.840.1.113883.5.83",
+              "code": "N"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Observation/71",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "identifier": [
+          {
+            "value": "c6f88321-67ad-11db-bd13-0800200c9a66"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "3141-9",
+              "display": "Patient Body Weight - Measured"
+            }
+          ]
+        },
+        "status": "completed",
+        "effectiveDateTime": "1999-11-14",
+        "valueQuantity": {
+          "value": "86",
+          "unit": "kg"
         },
         "interpretation": {
           "coding": [
@@ -2710,16 +2802,16 @@
           "coding": [
             {
               "system": "http://loinc.org",
-              "code": "3141-9",
-              "display": "Patient Body Weight - Measured"
+              "code": "8480-6",
+              "display": "Intravascular Systolic"
             }
           ]
         },
         "status": "completed",
-        "appliesDateTime": "1999-11-14",
+        "effectiveDateTime": "1999-11-14",
         "valueQuantity": {
-          "value": "86",
-          "units": "kg"
+          "value": "132",
+          "unit": "mm[Hg]"
         },
         "interpretation": {
           "coding": [
@@ -2747,16 +2839,16 @@
           "coding": [
             {
               "system": "http://loinc.org",
-              "code": "8480-6",
-              "display": "Intravascular Systolic"
+              "code": "8462-4",
+              "display": "Intravascular Diastolic"
             }
           ]
         },
         "status": "completed",
-        "appliesDateTime": "1999-11-14",
+        "effectiveDateTime": "1999-11-14",
         "valueQuantity": {
-          "value": "132",
-          "units": "mm[Hg]"
+          "value": "80",
+          "unit": "mm[Hg]"
         },
         "interpretation": {
           "coding": [
@@ -2784,16 +2876,16 @@
           "coding": [
             {
               "system": "http://loinc.org",
-              "code": "8462-4",
-              "display": "Intravascular Diastolic"
+              "code": "8302-2",
+              "display": "Height"
             }
           ]
         },
         "status": "completed",
-        "appliesDateTime": "1999-11-14",
+        "effectiveDateTime": "2000-04-07",
         "valueQuantity": {
-          "value": "80",
-          "units": "mm[Hg]"
+          "value": "177",
+          "unit": "cm"
         },
         "interpretation": {
           "coding": [
@@ -2821,16 +2913,16 @@
           "coding": [
             {
               "system": "http://loinc.org",
-              "code": "8302-2",
-              "display": "Height"
+              "code": "3141-9",
+              "display": "Patient Body Weight - Measured"
             }
           ]
         },
         "status": "completed",
-        "appliesDateTime": "2000-04-07",
+        "effectiveDateTime": "2000-04-07",
         "valueQuantity": {
-          "value": "177",
-          "units": "cm"
+          "value": "90",
+          "unit": "kg"
         },
         "interpretation": {
           "coding": [
@@ -2858,16 +2950,16 @@
           "coding": [
             {
               "system": "http://loinc.org",
-              "code": "3141-9",
-              "display": "Patient Body Weight - Measured"
+              "code": "8480-6",
+              "display": "Intravascular Systolic"
             }
           ]
         },
         "status": "completed",
-        "appliesDateTime": "2000-04-07",
+        "effectiveDateTime": "2000-04-07",
         "valueQuantity": {
-          "value": "90",
-          "units": "kg"
+          "value": "145",
+          "unit": "mm[Hg]"
         },
         "interpretation": {
           "coding": [
@@ -2895,53 +2987,16 @@
           "coding": [
             {
               "system": "http://loinc.org",
-              "code": "8480-6",
-              "display": "Intravascular Systolic"
-            }
-          ]
-        },
-        "status": "completed",
-        "appliesDateTime": "2000-04-07",
-        "valueQuantity": {
-          "value": "145",
-          "units": "mm[Hg]"
-        },
-        "interpretation": {
-          "coding": [
-            {
-              "system": "urn:oid:2.16.840.1.113883.5.83",
-              "code": "N"
-            }
-          ]
-        }
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Observation",
-        "id": "Observation/78",
-        "subject": {
-          "reference": "Patient/1"
-        },
-        "identifier": [
-          {
-            "value": "c6f88321-67ad-11db-bd13-0800200c9a66"
-          }
-        ],
-        "code": {
-          "coding": [
-            {
-              "system": "http://loinc.org",
               "code": "8462-4",
               "display": "Intravascular Diastolic"
             }
           ]
         },
         "status": "completed",
-        "appliesDateTime": "2000-04-07",
+        "effectiveDateTime": "2000-04-07",
         "valueQuantity": {
           "value": "88",
-          "units": "mm[Hg]"
+          "unit": "mm[Hg]"
         },
         "interpretation": {
           "coding": [
