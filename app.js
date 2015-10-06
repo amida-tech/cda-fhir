@@ -72,43 +72,43 @@ istream
                         }, function (res) {
                             res.setEncoding('utf8');
                             res.on('data', function (chunk) {
-                                //console.log('BODY2: ' + chunk);
-                                result2 = result2 + chunk;
-                            })
-                            .on('end', function() {
-                                var resource = JSON.parse(result2);
-                                var comparator = function (l, r, propn) {
-                                    if (_.isNumber(l)) {
-                                        return;
-                                    }
-                                    if (_.isString(l)) {
-                                        return;
-                                    }
-                                    if (_.isBoolean(l)) {
-                                        return;
-                                    }
-                                    if (_.isArray(l) && _.isArray(r)) {
-                                        if (l.length !== r.length) {
-                                            console.log('!-------- Array length differ %s', propn);
+                                    //console.log('BODY2: ' + chunk);
+                                    result2 = result2 + chunk;
+                                })
+                                .on('end', function () {
+                                    var resource = JSON.parse(result2);
+                                    var comparator = function (l, r, propn) {
+                                        if (_.isNumber(l)) {
+                                            return;
                                         }
-                                        for (var i = 0; i < l.lenght && i < r.length; i++) {
-                                            comparator(l[i], r[i], propn);
+                                        if (_.isString(l)) {
+                                            return;
                                         }
-                                    }
-
-                                    for (var prop in l) {
-                                        if (l.hasOwnProperty(prop)) {
-                                            if (!r.hasOwnProperty(prop)) {
-                                                console.log('!-------- Missed prop ' + prop);
-                                            } else {
-                                                comparator(l[prop], r[prop], prop);
+                                        if (_.isBoolean(l)) {
+                                            return;
+                                        }
+                                        if (_.isArray(l) && _.isArray(r)) {
+                                            if (l.length !== r.length) {
+                                                console.log('!-------- Array length differ %s', propn);
+                                            }
+                                            for (var i = 0; i < l.lenght && i < r.length; i++) {
+                                                comparator(l[i], r[i], propn);
                                             }
                                         }
-                                    }
-                                };
-                                console.log('compare:\n %j \n %j', element[0].resource, resource);
-                                comparator(element[0].resource, resource);
-                            });
+
+                                        for (var prop in l) {
+                                            if (l.hasOwnProperty(prop)) {
+                                                if (!r.hasOwnProperty(prop)) {
+                                                    console.log('!-------- Missed prop ' + prop);
+                                                } else {
+                                                    comparator(l[prop], r[prop], prop);
+                                                }
+                                            }
+                                        }
+                                    };
+                                    console.log('compare:\n %j \n %j', element[0].resource, resource);
+                                    comparator(element[0].resource, resource);
+                                });
                         });
                         req.end();
                     });
