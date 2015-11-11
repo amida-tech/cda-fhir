@@ -133,6 +133,26 @@ describe('CCDA parser test', function () {
 
     });
 
+    it('"bluebutton-02-updated.xml" as input', function (done) {
+
+        var request = require('request');
+        var data = request.get('https://raw.githubusercontent.com/amida-tech/DRE-services/master/test/artifacts/demo-r1.5/bluebutton-02-updated.xml');
+
+        data
+            .pipe(new bbcms.CcdaParserStream())
+            .on('data', function (data) {
+                expect(data).to.exist;
+                fs.writeFile(__dirname + '/artifacts/bluebutton-02-updated.json', JSON.stringify(data, null, '  '));
+            })
+            .on('finish', function () {
+                done();
+            })
+            .on('error', function (error) {
+                done(error);
+            });
+
+    });
+
     it('buggy input', function (done) {
         var istream = fs.createReadStream(__dirname + '/test-parser-cda.js', 'utf-8');
 
