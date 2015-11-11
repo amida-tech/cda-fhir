@@ -628,7 +628,7 @@
             }
           },
           {
-            "url": "http://hl7.org/fhir/Profile/us-core-race",
+            "url": "http://hl7.org/fhir/StructureDefinition/us-core-race",
             "valueCodeableConcept": {
               "coding": [
                 {
@@ -640,7 +640,7 @@
             }
           },
           {
-            "url": "http://hl7.org/fhir/Profile/us-core-ethnicity",
+            "url": "http://hl7.org/fhir/StructureDefinition/us-core-ethnicity",
             "valueCodeableConcept": {
               "coding": [
                 {
@@ -801,24 +801,16 @@
                 "coding": [
                   {
                     "system": "http://snomed.info/sct",
-                    "code": "419511003",
-                    "display": "Propensity to adverse reactions to drug"
-                  }
-                ]
-              },
-              {
-                "coding": [
-                  {
-                    "system": "http://snomed.info/sct",
                     "code": "422587007",
                     "display": "Nausea"
                   }
                 ]
               }
             ],
-            "severity": "Moderate to severe"
+            "severity": "severe"
           }
         ],
+        "category": "medication",
         "substance": {
           "coding": [
             {
@@ -827,7 +819,8 @@
               "display": "ALLERGENIC EXTRACT, PENICILLIN"
             }
           ]
-        }
+        },
+        "criticality": "CRITH"
       }
     },
     {
@@ -847,24 +840,16 @@
                 "coding": [
                   {
                     "system": "http://snomed.info/sct",
-                    "code": "419511003",
-                    "display": "Propensity to adverse reactions to drug"
-                  }
-                ]
-              },
-              {
-                "coding": [
-                  {
-                    "system": "http://snomed.info/sct",
                     "code": "56018004",
                     "display": "Wheezing"
                   }
                 ]
               }
             ],
-            "severity": "Moderate"
+            "severity": "moderate"
           }
         ],
+        "category": "medication",
         "substance": {
           "coding": [
             {
@@ -873,7 +858,8 @@
               "display": "Codeine"
             }
           ]
-        }
+        },
+        "criticality": "CRITL"
       }
     },
     {
@@ -893,24 +879,17 @@
                 "coding": [
                   {
                     "system": "http://snomed.info/sct",
-                    "code": "59037007",
-                    "display": "Drug intolerance"
-                  }
-                ]
-              },
-              {
-                "coding": [
-                  {
-                    "system": "http://snomed.info/sct",
                     "code": "247472004",
                     "display": "Hives"
                   }
                 ]
               }
             ],
-            "severity": "Mild to moderate"
+            "severity": "moderate"
           }
         ],
+        "type": "intolerance",
+        "category": "medication",
         "substance": {
           "coding": [
             {
@@ -919,7 +898,8 @@
               "display": "Aspirin"
             }
           ]
-        }
+        },
+        "criticality": "CRITL"
       }
     },
     {
