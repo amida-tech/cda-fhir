@@ -27,7 +27,7 @@ var fsTest = function (infile, done) {
         .on('error', function (error) {
             done(error);
         });
-}
+};
 
 describe('CCDA parser test', function () {
 
