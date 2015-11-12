@@ -7,6 +7,28 @@ var fs = require('fs');
 
 var bbcms = require("../index");
 
+var fsTest = function (infile, done) {
+
+    var istream = fs.createReadStream(infile, 'utf-8');
+    expect(istream).to.exist;
+
+    istream
+        .pipe(new bbcms.CcdaParserStream())
+        .on('data', function (data) {
+            expect(data).to.exist;
+            fs.writeFile(infile + '.json', JSON.stringify(data, null, '  '), function (err) {
+                if (err) {
+                    throw err;
+                }
+                done();
+            });
+
+        })
+        .on('error', function (error) {
+            done(error);
+        });
+}
+
 describe('CCDA parser test', function () {
 
     it('"bluebutton-01-original.xml" as input', function (done) {
@@ -167,8 +189,64 @@ describe('CCDA parser test', function () {
                     done();
                 }
             })
-            .on('finish', function () {})
-            .on('error', function (error) {});
+            .on('finish', function () { })
+            .on('error', function (error) { });
 
     });
+
+
+    var archive = __dirname + '/artifacts/CCDA-Samples.zip';
+    var extractionPoint = __dirname + '/artifacts';
+
+    var extractAndTest = function () {
+        var stats = false;
+        try {
+            stats = fs.statSync(__dirname + '/artifacts/CCDA-Samples');
+        } catch (e) {
+            // Do nothing, file just not exists
+        }
+        if (!stats) {
+            fs.mkdirSync(__dirname + '/artifacts/CCDA-Samples');
+        }
+
+        var AdmZip = require('adm-zip');
+
+        // reading archives
+        var zip = new AdmZip(archive);
+        var zipEntries = zip.getEntries(); // an array of ZipEntry records
+
+        zipEntries.forEach(function (zipEntry) {
+            //console.log(zipEntry.toString()); // outputs zip entries information
+            //console.log(zipEntry.entryName);
+            if (zipEntry.entryName.substr(zipEntry.entryName.length - 4) === ".xml") {
+                fs.writeFileSync(extractionPoint + '/' + zipEntry.entryName, zipEntry.getData('utf8'));
+            }
+        });
+
+        var items = fs.readdirSync(extractionPoint + '/CCDA-Samples');
+        items.forEach(function (item) {
+            if (item.substr(item.length - 4) === '.xml') {
+                it('for \'' + item + '\'', function (done) {
+                    fsTest(extractionPoint + '/CCDA-Samples/' + item, done);
+                });
+            }
+        });
+    };
+
+    var stats = false;
+
+    try {
+        stats = fs.statSync(archive);
+    } catch (e) {
+        // Do nothing, file just not exists
+    }
+
+    if (!stats) {
+        var request = require('sync-request');
+        var res = request('GET', "http://www.lantanagroup.com/validator/CCDA-Samples.zip");
+        fs.writeFileSync(archive, res.getBody());
+    }
+
+    extractAndTest();
+
 });

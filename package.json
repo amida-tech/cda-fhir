@@ -46,7 +46,9 @@
     "mocha": "~2.2.4",
     "request": "~2.61.0",
     "istanbul": "*",
-    "mocha-lcov-reporter": "0.0.2"
+    "mocha-lcov-reporter": "0.0.2",
+    "adm-zip": "^0.4.7",
+    "sync-request": "^2.1.0"
   },
   "repository": {
     "type": "git",
