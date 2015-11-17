@@ -1695,6 +1695,9 @@
             }
           }
         ],
+        "medicationReference": {
+          "reference": "Medication/40"
+        },
         "reasonReference": {
           "reference": "Condition/39"
         },
@@ -1707,9 +1710,6 @@
           "quantity": {
             "value": 75
           }
-        },
-        "medicationReference": {
-          "reference": "Medication/40"
         },
         "prescriber": {
           "reference": "Practitioner/42"
@@ -2614,6 +2614,14 @@
         "subject": {
           "reference": "Patient/1"
         },
+        "category": {
+          "coding": [
+            {
+              "code": "social-history",
+              "display": "Social history"
+            }
+          ]
+        },
         "identifier": [
           {
             "value": "9b56c25d-9104-45ee-9fa4-e0f3afaa01c1"
@@ -2643,6 +2651,14 @@
         "subject": {
           "reference": "Patient/1"
         },
+        "category": {
+          "coding": [
+            {
+              "code": "social-history",
+              "display": "Social history"
+            }
+          ]
+        },
         "identifier": [
           {
             "value": "45efb604-7049-4a2e-ad33-d38556c9636c"
@@ -2670,6 +2686,14 @@
         "id": "Observation/69",
         "subject": {
           "reference": "Patient/1"
+        },
+        "category": {
+          "coding": [
+            {
+              "code": "social-history",
+              "display": "Social history"
+            }
+          ]
         },
         "identifier": [
           {
