@@ -189,11 +189,10 @@ describe('CCDA parser test', function () {
                     done();
                 }
             })
-            .on('finish', function () { })
-            .on('error', function (error) { });
+            .on('finish', function () {})
+            .on('error', function (error) {});
 
     });
-
 
     var archive = __dirname + '/artifacts/CCDA-Samples.zip';
     var extractionPoint = __dirname + '/artifacts';

@@ -58,378 +58,378 @@
           {
             "entry": [
               {
-                "reference": "FamilyMemberHistory/9"
+                "reference": "Observation/9"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "ClinicalImpression/10"
+                "reference": "Observation/10"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Observation/11"
+                "reference": "Immunization/11"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "ClinicalImpression/12"
+                "reference": "Organization/12"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Observation/13"
+                "reference": "Practitioner/13"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Immunization/14"
+                "reference": "Organization/14"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Organization/15"
+                "reference": "Immunization/15"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Practitioner/16"
+                "reference": "Organization/16"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Organization/17"
+                "reference": "Practitioner/17"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Immunization/18"
+                "reference": "Organization/18"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Organization/19"
+                "reference": "Immunization/19"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Practitioner/20"
+                "reference": "Organization/20"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Organization/21"
+                "reference": "Practitioner/21"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Immunization/22"
+                "reference": "Organization/22"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Organization/23"
+                "reference": "Immunization/23"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Practitioner/24"
+                "reference": "Organization/24"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Organization/25"
+                "reference": "Practitioner/25"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Immunization/26"
+                "reference": "Organization/26"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Organization/27"
+                "reference": "MedicationOrder/27"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Practitioner/28"
+                "reference": "MedicationAdministration/28"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Organization/29"
+                "reference": "Medication/29"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Device/30"
+                "reference": "Organization/30"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Device/31"
+                "reference": "Practitioner/31"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Device/32"
+                "reference": "Organization/32"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "MedicationOrder/33"
+                "reference": "Condition/33"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "MedicationAdministration/34"
+                "reference": "Medication/34"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Medication/35"
+                "reference": "Organization/35"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Organization/36"
+                "reference": "Practitioner/36"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Practitioner/37"
+                "reference": "Claim/37"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Organization/38"
+                "reference": "Coverage/38"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Condition/39"
+                "reference": "Organization/39"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Medication/40"
+                "reference": "CarePlan/40"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Organization/41"
+                "reference": "ProcedureRequest/41"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Practitioner/42"
+                "reference": "ProcedureRequest/42"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Claim/43"
+                "reference": "Procedure/43"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Coverage/44"
+                "reference": "ProcedureRequest/44"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Organization/45"
+                "reference": "Condition/45"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "CarePlan/46"
+                "reference": "Condition/46"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "ProcedureRequest/47"
+                "reference": "Procedure/47"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "ProcedureRequest/48"
+                "reference": "Practitioner/48"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "ProcedureRequest/49"
+                "reference": "Organization/49"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "ProcedureRequest/50"
+                "reference": "Device/50"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "ClinicalImpression/51"
+                "reference": "Procedure/51"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Condition/52"
+                "reference": "Practitioner/52"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Condition/53"
+                "reference": "Organization/53"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Procedure/54"
+                "reference": "Device/54"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Practitioner/55"
+                "reference": "Location/55"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Organization/56"
+                "reference": "Observation/56"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Device/57"
+                "reference": "Observation/57"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Procedure/58"
+                "reference": "Observation/58"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Practitioner/59"
+                "reference": "Observation/59"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Organization/60"
+                "reference": "Observation/60"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Device/61"
+                "reference": "Observation/61"
               }
             ]
           },
           {
             "entry": [
               {
-                "reference": "Location/62"
+                "reference": "Observation/62"
               }
             ]
           },
@@ -486,55 +486,6 @@
             "entry": [
               {
                 "reference": "Observation/70"
-              }
-            ]
-          },
-          {
-            "entry": [
-              {
-                "reference": "Observation/71"
-              }
-            ]
-          },
-          {
-            "entry": [
-              {
-                "reference": "Observation/72"
-              }
-            ]
-          },
-          {
-            "entry": [
-              {
-                "reference": "Observation/73"
-              }
-            ]
-          },
-          {
-            "entry": [
-              {
-                "reference": "Observation/74"
-              }
-            ]
-          },
-          {
-            "entry": [
-              {
-                "reference": "Observation/75"
-              }
-            ]
-          },
-          {
-            "entry": [
-              {
-                "reference": "Observation/76"
-              }
-            ]
-          },
-          {
-            "entry": [
-              {
-                "reference": "Observation/77"
               }
             ]
           }
@@ -1023,102 +974,8 @@
     },
     {
       "resource": {
-        "resourceType": "FamilyMemberHistory",
-        "id": "FamilyMemberHistory/9",
-        "patient": {
-          "reference": "Patient/1"
-        },
-        "relationship": [
-          {
-            "coding": [
-              {
-                "system": "urn:oid:2.16.840.1.113883.5.111",
-                "code": "FTH",
-                "display": "Father"
-              }
-            ]
-          }
-        ],
-        "gender": "male",
-        "bornDate": "1910",
-        "condition": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://snomed.info/sct",
-                  "code": "22298006",
-                  "display": "Myocardial infarction"
-                }
-              ]
-            },
-            "outcome": {
-              "coding": [
-                {
-                  "system": "http://snomed.info/sct",
-                  "code": "419099009",
-                  "display": "Dead"
-                }
-              ]
-            },
-            "onsetQuantity": {
-              "value": 57,
-              "unit": "a",
-              "system": "http://snomed.info/sct",
-              "code": "445518008"
-            }
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://snomed.info/sct",
-                  "code": "44054006",
-                  "display": "Diabetes mellitus type 2"
-                }
-              ]
-            },
-            "onsetQuantity": {
-              "value": 40,
-              "unit": "a",
-              "system": "http://snomed.info/sct",
-              "code": "445518008"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "ClinicalImpression",
-        "id": "ClinicalImpression/10",
-        "patient": {
-          "reference": "Patient/1"
-        },
-        "investigations": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://snomed.info/sct",
-                  "code": "160237006",
-                  "display": "History/symptoms"
-                }
-              ]
-            },
-            "item": [
-              {
-                "reference": "Observation/11"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "resource": {
         "resourceType": "Observation",
-        "id": "Observation/11",
+        "id": "Observation/9",
         "subject": {
           "reference": "Patient/1"
         },
@@ -1159,35 +1016,8 @@
     },
     {
       "resource": {
-        "resourceType": "ClinicalImpression",
-        "id": "ClinicalImpression/12",
-        "patient": {
-          "reference": "Patient/1"
-        },
-        "investigations": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://snomed.info/sct",
-                  "code": "160237006",
-                  "display": "History/symptoms"
-                }
-              ]
-            },
-            "item": [
-              {
-                "reference": "Observation/13"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "resource": {
         "resourceType": "Observation",
-        "id": "Observation/13",
+        "id": "Observation/10",
         "subject": {
           "reference": "Patient/1"
         },
@@ -1234,7 +1064,7 @@
     {
       "resource": {
         "resourceType": "Immunization",
-        "id": "Immunization/14",
+        "id": "Immunization/11",
         "patient": {
           "reference": "Patient/1"
         },
@@ -1263,24 +1093,24 @@
         },
         "lotNumber": "1",
         "manufacturer": {
-          "reference": "Organization/15"
+          "reference": "Organization/12"
         },
         "performer": {
-          "reference": "Practitioner/16"
+          "reference": "Practitioner/13"
         }
       }
     },
     {
       "resource": {
         "resourceType": "Organization",
-        "id": "Organization/15",
+        "id": "Organization/12",
         "name": "Health LS - Immuno Inc."
       }
     },
     {
       "resource": {
         "resourceType": "Practitioner",
-        "id": "Practitioner/16",
+        "id": "Practitioner/13",
         "identifier": [
           {
             "value": "2.16.840.1.113883.19.5.9999.456"
@@ -1308,7 +1138,7 @@
         "practitionerRole": [
           {
             "managingOrganization": {
-              "reference": "Organization/17"
+              "reference": "Organization/14"
             }
           }
         ]
@@ -1317,14 +1147,14 @@
     {
       "resource": {
         "resourceType": "Organization",
-        "id": "Organization/17",
+        "id": "Organization/14",
         "name": "Good Health Clinic"
       }
     },
     {
       "resource": {
         "resourceType": "Immunization",
-        "id": "Immunization/18",
+        "id": "Immunization/15",
         "patient": {
           "reference": "Patient/1"
         },
@@ -1354,24 +1184,24 @@
         },
         "lotNumber": "1",
         "manufacturer": {
-          "reference": "Organization/19"
+          "reference": "Organization/16"
         },
         "performer": {
-          "reference": "Practitioner/20"
+          "reference": "Practitioner/17"
         }
       }
     },
     {
       "resource": {
         "resourceType": "Organization",
-        "id": "Organization/19",
+        "id": "Organization/16",
         "name": "Health LS - Immuno Inc."
       }
     },
     {
       "resource": {
         "resourceType": "Practitioner",
-        "id": "Practitioner/20",
+        "id": "Practitioner/17",
         "identifier": [
           {
             "value": "2.16.840.1.113883.19.5.9999.456"
@@ -1399,7 +1229,7 @@
         "practitionerRole": [
           {
             "managingOrganization": {
-              "reference": "Organization/21"
+              "reference": "Organization/18"
             }
           }
         ]
@@ -1408,14 +1238,14 @@
     {
       "resource": {
         "resourceType": "Organization",
-        "id": "Organization/21",
+        "id": "Organization/18",
         "name": "Good Health Clinic"
       }
     },
     {
       "resource": {
         "resourceType": "Immunization",
-        "id": "Immunization/22",
+        "id": "Immunization/19",
         "patient": {
           "reference": "Patient/1"
         },
@@ -1444,24 +1274,24 @@
         },
         "lotNumber": "1",
         "manufacturer": {
-          "reference": "Organization/23"
+          "reference": "Organization/20"
         },
         "performer": {
-          "reference": "Practitioner/24"
+          "reference": "Practitioner/21"
         }
       }
     },
     {
       "resource": {
         "resourceType": "Organization",
-        "id": "Organization/23",
+        "id": "Organization/20",
         "name": "Health LS - Immuno Inc."
       }
     },
     {
       "resource": {
         "resourceType": "Practitioner",
-        "id": "Practitioner/24",
+        "id": "Practitioner/21",
         "identifier": [
           {
             "value": "2.16.840.1.113883.19.5.9999.456"
@@ -1489,7 +1319,7 @@
         "practitionerRole": [
           {
             "managingOrganization": {
-              "reference": "Organization/25"
+              "reference": "Organization/22"
             }
           }
         ]
@@ -1498,14 +1328,14 @@
     {
       "resource": {
         "resourceType": "Organization",
-        "id": "Organization/25",
+        "id": "Organization/22",
         "name": "Good Health Clinic"
       }
     },
     {
       "resource": {
         "resourceType": "Immunization",
-        "id": "Immunization/26",
+        "id": "Immunization/23",
         "patient": {
           "reference": "Patient/1"
         },
@@ -1535,10 +1365,10 @@
         },
         "lotNumber": "1",
         "manufacturer": {
-          "reference": "Organization/27"
+          "reference": "Organization/24"
         },
         "performer": {
-          "reference": "Practitioner/28"
+          "reference": "Practitioner/25"
         },
         "explanation": {
           "reasonNotGiven": [
@@ -1558,14 +1388,14 @@
     {
       "resource": {
         "resourceType": "Organization",
-        "id": "Organization/27",
+        "id": "Organization/24",
         "name": "Health LS - Immuno Inc."
       }
     },
     {
       "resource": {
         "resourceType": "Practitioner",
-        "id": "Practitioner/28",
+        "id": "Practitioner/25",
         "identifier": [
           {
             "value": "2.16.840.1.113883.19.5.9999.456"
@@ -1593,7 +1423,7 @@
         "practitionerRole": [
           {
             "managingOrganization": {
-              "reference": "Organization/29"
+              "reference": "Organization/26"
             }
           }
         ]
@@ -1602,86 +1432,14 @@
     {
       "resource": {
         "resourceType": "Organization",
-        "id": "Organization/29",
+        "id": "Organization/26",
         "name": "Good Health Clinic"
       }
     },
     {
       "resource": {
-        "resourceType": "Device",
-        "id": "Device/30",
-        "patient": {
-          "reference": "Patient/1"
-        },
-        "status": "available",
-        "identifier": [
-          {
-            "value": "2413773c-2372-4299-bbe6-5b0f60664489"
-          }
-        ],
-        "type": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "72506001",
-              "display": "Automatic implantable cardioverter/defibrillator"
-            }
-          ]
-        }
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Device",
-        "id": "Device/31",
-        "patient": {
-          "reference": "Patient/1"
-        },
-        "status": "available",
-        "identifier": [
-          {
-            "value": "eb936010-7b17-11db-9fe1-0800200c9a68"
-          }
-        ],
-        "type": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "304120007",
-              "display": "Total hip replacement prosthesis"
-            }
-          ]
-        }
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Device",
-        "id": "Device/32",
-        "patient": {
-          "reference": "Patient/1"
-        },
-        "status": "available",
-        "identifier": [
-          {
-            "value": "eb936010-7b17-11db-9fe1-0800200c9a68"
-          }
-        ],
-        "type": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "58938008",
-              "display": "Wheelchair"
-            }
-          ]
-        }
-      }
-    },
-    {
-      "resource": {
         "resourceType": "MedicationOrder",
-        "id": "MedicationOrder/33",
+        "id": "MedicationOrder/27",
         "patient": {
           "reference": "Patient/1"
         },
@@ -1696,10 +1454,10 @@
           }
         ],
         "medicationReference": {
-          "reference": "Medication/40"
+          "reference": "Medication/34"
         },
         "reasonReference": {
-          "reference": "Condition/39"
+          "reference": "Condition/33"
         },
         "status": "completed",
         "dispenseRequest": {
@@ -1712,19 +1470,19 @@
           }
         },
         "prescriber": {
-          "reference": "Practitioner/42"
+          "reference": "Practitioner/36"
         }
       }
     },
     {
       "resource": {
         "resourceType": "MedicationAdministration",
-        "id": "MedicationAdministration/34",
+        "id": "MedicationAdministration/28",
         "patient": {
           "reference": "Patient/1"
         },
         "prescription": {
-          "reference": "MedicationOrder/33"
+          "reference": "MedicationOrder/27"
         },
         "dosage": {
           "route": {
@@ -1765,17 +1523,17 @@
           "end": "2012-05-15"
         },
         "medicationReference": {
-          "reference": "Medication/35"
+          "reference": "Medication/29"
         },
         "practitioner": {
-          "reference": "Practitioner/37"
+          "reference": "Practitioner/31"
         }
       }
     },
     {
       "resource": {
         "resourceType": "Medication",
-        "id": "Medication/35",
+        "id": "Medication/29",
         "code": {
           "coding": [
             {
@@ -1787,25 +1545,25 @@
           "text": "Proventil HFA"
         },
         "manufacturer": {
-          "reference": "Organization/36"
+          "reference": "Organization/30"
         }
       }
     },
     {
       "resource": {
         "resourceType": "Organization",
-        "id": "Organization/36",
+        "id": "Organization/30",
         "name": "Medication Factory Inc."
       }
     },
     {
       "resource": {
         "resourceType": "Practitioner",
-        "id": "Practitioner/37",
+        "id": "Practitioner/31",
         "practitionerRole": [
           {
             "managingOrganization": {
-              "reference": "Organization/38"
+              "reference": "Organization/32"
             }
           }
         ]
@@ -1814,14 +1572,14 @@
     {
       "resource": {
         "resourceType": "Organization",
-        "id": "Organization/38",
+        "id": "Organization/32",
         "name": "Community Health and Hospitals"
       }
     },
     {
       "resource": {
         "resourceType": "Condition",
-        "id": "Condition/39",
+        "id": "Condition/33",
         "patient": {
           "reference": "Patient/1"
         },
@@ -1851,7 +1609,7 @@
     {
       "resource": {
         "resourceType": "Medication",
-        "id": "Medication/40",
+        "id": "Medication/34",
         "code": {
           "coding": [
             {
@@ -1863,21 +1621,21 @@
           "text": "Proventil 0.09 MG/ACTUAT inhalant solution"
         },
         "manufacturer": {
-          "reference": "Organization/41"
+          "reference": "Organization/35"
         }
       }
     },
     {
       "resource": {
         "resourceType": "Organization",
-        "id": "Organization/41",
+        "id": "Organization/35",
         "name": "Medication Factory Inc."
       }
     },
     {
       "resource": {
         "resourceType": "Practitioner",
-        "id": "Practitioner/42",
+        "id": "Practitioner/36",
         "identifier": [
           {
             "value": "2a620155-9d11-439e-92b3-5d9815fe4de8"
@@ -1896,7 +1654,7 @@
     {
       "resource": {
         "resourceType": "Claim",
-        "id": "Claim/43",
+        "id": "Claim/37",
         "patient": {
           "reference": "Patient/1"
         },
@@ -1904,7 +1662,7 @@
           {
             "sequence": 1,
             "coverage": {
-              "reference": "Coverage/44"
+              "reference": "Coverage/38"
             }
           }
         ],
@@ -1931,7 +1689,7 @@
     {
       "resource": {
         "resourceType": "Coverage",
-        "id": "Coverage/44",
+        "id": "Coverage/38",
         "subscriber": {
           "reference": "Patient/1"
         },
@@ -1941,14 +1699,14 @@
           }
         ],
         "issuer": {
-          "reference": "Organization/45"
+          "reference": "Organization/39"
         }
       }
     },
     {
       "resource": {
         "resourceType": "Organization",
-        "id": "Organization/45",
+        "id": "Organization/39",
         "name": "Good Health Insurance",
         "telecom": [
           {
@@ -1974,29 +1732,29 @@
     {
       "resource": {
         "resourceType": "CarePlan",
-        "id": "CarePlan/46",
+        "id": "CarePlan/40",
         "subject": {
           "reference": "Patient/1"
         },
         "activity": [
           {
             "reference": {
-              "reference": "ProcedureRequest/47"
+              "reference": "ProcedureRequest/41"
             }
           },
           {
             "reference": {
-              "reference": "ProcedureRequest/48"
+              "reference": "ProcedureRequest/42"
             }
           },
           {
             "reference": {
-              "reference": "ProcedureRequest/49"
+              "reference": "Procedure/43"
             }
           },
           {
             "reference": {
-              "reference": "ProcedureRequest/50"
+              "reference": "ProcedureRequest/44"
             }
           }
         ]
@@ -2005,7 +1763,27 @@
     {
       "resource": {
         "resourceType": "ProcedureRequest",
-        "id": "ProcedureRequest/47",
+        "id": "ProcedureRequest/41",
+        "subject": {
+          "reference": "Patient/1"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73761001",
+              "display": "Colonoscopy"
+            }
+          ]
+        },
+        "status": "new",
+        "scheduledDateTime": "2012-05-12"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "ProcedureRequest/42",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2025,7 +1803,7 @@
     {
       "resource": {
         "resourceType": "ProcedureRequest",
-        "id": "ProcedureRequest/48",
+        "id": "Procedure/43",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2044,8 +1822,8 @@
     },
     {
       "resource": {
-        "resourceType": "ProcedureRequest",
-        "id": "ProcedureRequest/49",
+        "resourceType": "Procedure",
+        "id": "ProcedureRequest/44",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2060,49 +1838,12 @@
         },
         "status": "new",
         "scheduledDateTime": "2012-05-12"
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "ProcedureRequest",
-        "id": "ProcedureRequest/50",
-        "subject": {
-          "reference": "Patient/1"
-        },
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "73761001",
-              "display": "Colonoscopy"
-            }
-          ]
-        },
-        "status": "new",
-        "scheduledDateTime": "2012-05-12"
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "ClinicalImpression",
-        "id": "ClinicalImpression/51",
-        "patient": {
-          "reference": "Patient/1"
-        },
-        "problem": [
-          {
-            "reference": "Condition/52"
-          },
-          {
-            "reference": "Condition/53"
-          }
-        ]
       }
     },
     {
       "resource": {
         "resourceType": "Condition",
-        "id": "Condition/52",
+        "id": "Condition/45",
         "patient": {
           "reference": "Patient/1"
         },
@@ -2138,7 +1879,7 @@
     {
       "resource": {
         "resourceType": "Condition",
-        "id": "Condition/53",
+        "id": "Condition/46",
         "patient": {
           "reference": "Patient/1"
         },
@@ -2177,7 +1918,7 @@
     {
       "resource": {
         "resourceType": "Procedure",
-        "id": "Procedure/54",
+        "id": "Procedure/47",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2211,13 +1952,13 @@
         "performer": [
           {
             "actor": {
-              "reference": "Practitioner/55"
+              "reference": "Practitioner/48"
             }
           }
         ],
         "used": [
           {
-            "reference": "Device/57"
+            "reference": "Device/50"
           }
         ]
       }
@@ -2225,7 +1966,7 @@
     {
       "resource": {
         "resourceType": "Practitioner",
-        "id": "Practitioner/55",
+        "id": "Practitioner/48",
         "identifier": [
           {
             "value": "2.16.840.1.113883.19.5.9999.456"
@@ -2251,7 +1992,7 @@
         "practitionerRole": [
           {
             "managingOrganization": {
-              "reference": "Organization/56"
+              "reference": "Organization/49"
             }
           }
         ]
@@ -2260,7 +2001,7 @@
     {
       "resource": {
         "resourceType": "Organization",
-        "id": "Organization/56",
+        "id": "Organization/49",
         "name": "Community Health and Hospitals",
         "telecom": [
           {
@@ -2284,7 +2025,7 @@
     {
       "resource": {
         "resourceType": "Device",
-        "id": "Device/57",
+        "id": "Device/50",
         "patient": {
           "reference": "Patient/1"
         },
@@ -2307,7 +2048,7 @@
     {
       "resource": {
         "resourceType": "Procedure",
-        "id": "Procedure/58",
+        "id": "Procedure/51",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2341,24 +2082,24 @@
         "performer": [
           {
             "actor": {
-              "reference": "Practitioner/59"
+              "reference": "Practitioner/52"
             }
           }
         ],
         "used": [
           {
-            "reference": "Device/61"
+            "reference": "Device/54"
           }
         ],
         "location": {
-          "reference": "Location/62"
+          "reference": "Location/55"
         }
       }
     },
     {
       "resource": {
         "resourceType": "Practitioner",
-        "id": "Practitioner/59",
+        "id": "Practitioner/52",
         "identifier": [
           {
             "value": "2.16.840.1.113883.19.5"
@@ -2384,7 +2125,7 @@
         "practitionerRole": [
           {
             "managingOrganization": {
-              "reference": "Organization/60"
+              "reference": "Organization/53"
             }
           }
         ]
@@ -2393,14 +2134,14 @@
     {
       "resource": {
         "resourceType": "Organization",
-        "id": "Organization/60",
+        "id": "Organization/53",
         "name": "Community Health and Hospitals"
       }
     },
     {
       "resource": {
         "resourceType": "Device",
-        "id": "Device/61",
+        "id": "Device/54",
         "patient": {
           "reference": "Patient/1"
         }
@@ -2409,7 +2150,7 @@
     {
       "resource": {
         "resourceType": "Location",
-        "id": "Location/62",
+        "id": "Location/55",
         "type": {
           "coding": [
             {
@@ -2434,7 +2175,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Observation/63",
+        "id": "Observation/56",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2476,7 +2217,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Observation/64",
+        "id": "Observation/57",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2525,7 +2266,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Observation/65",
+        "id": "Observation/58",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2574,7 +2315,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Observation/66",
+        "id": "Observation/59",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2610,7 +2351,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Observation/67",
+        "id": "Observation/60",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2647,7 +2388,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Observation/68",
+        "id": "Observation/61",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2683,7 +2424,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Observation/69",
+        "id": "Observation/62",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2719,7 +2460,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Observation/70",
+        "id": "Observation/63",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2756,7 +2497,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Observation/71",
+        "id": "Observation/64",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2793,7 +2534,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Observation/72",
+        "id": "Observation/65",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2830,7 +2571,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Observation/73",
+        "id": "Observation/66",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2867,7 +2608,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Observation/74",
+        "id": "Observation/67",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2904,7 +2645,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Observation/75",
+        "id": "Observation/68",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2941,7 +2682,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Observation/76",
+        "id": "Observation/69",
         "subject": {
           "reference": "Patient/1"
         },
@@ -2978,7 +2719,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Observation/77",
+        "id": "Observation/70",
         "subject": {
           "reference": "Patient/1"
         },
