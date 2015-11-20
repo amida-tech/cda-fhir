@@ -1,6 +1,6 @@
 {
   "name": "cda-fhir",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "Blue Button CMS Parser",
   "main": "./index.js",
   "directories": {
@@ -10,7 +10,7 @@
   "scripts": {
     "test": "grunt test"
   },
-  "author": "Dmitry Kachaev <dmitry@amida-tech.com>",
+  "author": "Alexey Shchelokov <alexey@amida-tech.com>",
   "contributors": [
     {
       "name": "Matthew McCall",
@@ -31,8 +31,7 @@
   },
   "dependencies": {
     "lodash": "~3.10.0",
-    "sax": "*",
-    "dev-null": "*" 
+    "sax": "*" 
   },
   "devDependencies": {
     "chai": "~2.3.0",
