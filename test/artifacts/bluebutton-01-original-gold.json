@@ -1014,6 +1014,14 @@
         "subject": {
           "reference": "Patient/1"
         },
+        "category": {
+          "coding": [
+            {
+              "code": "social-history",
+              "display": "Social history"
+            }
+          ]
+        },
         "identifier": [
           {
             "value": "c6b5a04b-2bf4-49d1-8336-636a3813df0a"
