@@ -5,7 +5,7 @@ Convert C-CDA xml to FHIR bundle
 
 [![NPM](https://nodei.co/npm/cda-fhir.png)](https://nodei.co/npm/cda-fhir/)
 
-[![Build Status](https://travis-ci.org/amida-tech/cda-fhir.svg)](https://travis-ci.org/amida-tech/cda-fhir) [![Coverage Status](https://coveralls.io/repos/amida-tech/cda-fhir/badge.svg?branch=master&service=github)](https://coveralls.io/github/amida-tech/cda-fhir?branch=master) ![dependencies status](https://david-dm.org/amida-tech/cda-fhir.svg)
+[![Build Status](https://travis-ci.org/amida-tech/cda-fhir.svg)](https://travis-ci.org/amida-tech/cda-fhir) [![Coverage Status](https://coveralls.io/repos/amida-tech/cda-fhir/badge.svg?branch=master&service=github)](https://coveralls.io/github/amida-tech/cda-fhir?branch=master) [![Dependency Status](https://david-dm.org/amida-tech/cda-fhir.svg)](https://david-dm.org/amida-tech/cda-fhir)
 
 Consolidated CDA (C-CDA)
 
