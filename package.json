@@ -1,7 +1,7 @@
 {
   "name": "cda-fhir",
-  "version": "0.9.7",
-  "description": "Blue Button CMS Parser",
+  "version": "2.0.0",
+  "description": "Blue Button CDA Parser",
   "main": "./index.js",
   "directories": {
     "doc": "doc",
