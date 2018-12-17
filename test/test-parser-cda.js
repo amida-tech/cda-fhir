@@ -40,7 +40,7 @@ describe('CCDA parser test', function () {
             .pipe(new bbcms.CcdaParserStream())
             .on('data', function (data) {
                 expect(data).to.exist;
-                fs.writeFile(__dirname + '/artifacts/bluebutton-01-original.json', JSON.stringify(data, null, '  '));
+                fs.writeFileSync(__dirname + '/artifacts/bluebutton-01-original.json', JSON.stringify(data, null, '  '));
 
                 var gold = fs.readFileSync(__dirname + '/artifacts/bluebutton-01-original-gold.json', 'utf-8');
                 expect(JSON.parse(gold)).to.eql(data);
@@ -64,7 +64,7 @@ describe('CCDA parser test', function () {
             .pipe(new bbcms.CcdaParserStream())
             .on('data', function (data) {
                 expect(data).to.exist;
-                fs.writeFile(__dirname + '/artifacts/Vitera_CCDA_SMART_Sample.json', JSON.stringify(data, null, '  '));
+                fs.writeFileSync(__dirname + '/artifacts/Vitera_CCDA_SMART_Sample.json', JSON.stringify(data, null, '  '));
             })
             .on('finish', function () {
                 done();
@@ -84,7 +84,7 @@ describe('CCDA parser test', function () {
             .pipe(new bbcms.CcdaParserStream())
             .on('data', function (data) {
                 expect(data).to.exist;
-                fs.writeFile(__dirname + '/artifacts/b2_Adam_Everyman_ToC.json', JSON.stringify(data, null, '  '));
+                fs.writeFileSync(__dirname + '/artifacts/b2_Adam_Everyman_ToC.json', JSON.stringify(data, null, '  '));
             })
             .on('finish', function () {
                 done();
@@ -104,7 +104,7 @@ describe('CCDA parser test', function () {
             .pipe(new bbcms.CcdaParserStream())
             .on('data', function (data) {
                 expect(data).to.exist;
-                fs.writeFile(__dirname + '/artifacts/170_314_e__2_AMB_SummaryOfCare_CED_Type.json', JSON.stringify(data, null, '  '));
+                fs.writeFileSync(__dirname + '/artifacts/170_314_e__2_AMB_SummaryOfCare_CED_Type.json', JSON.stringify(data, null, '  '));
             })
             .on('finish', function () {
                 done();
@@ -124,7 +124,7 @@ describe('CCDA parser test', function () {
             .pipe(new bbcms.CcdaParserStream())
             .on('data', function (data) {
                 expect(data).to.exist;
-                fs.writeFile(__dirname + '/artifacts/CCD_sample.json', JSON.stringify(data, null, '  '));
+                fs.writeFileSync(__dirname + '/artifacts/CCD_sample.json', JSON.stringify(data, null, '  '));
             })
             .on('finish', function () {
                 done();
@@ -144,7 +144,7 @@ describe('CCDA parser test', function () {
             .pipe(new bbcms.CcdaParserStream())
             .on('data', function (data) {
                 expect(data).to.exist;
-                fs.writeFile(__dirname + '/artifacts/CCDA_CCD_b1_Ambulatory_v2.json', JSON.stringify(data, null, '  '));
+                fs.writeFileSync(__dirname + '/artifacts/CCDA_CCD_b1_Ambulatory_v2.json', JSON.stringify(data, null, '  '));
             })
             .on('finish', function () {
                 done();
@@ -164,7 +164,7 @@ describe('CCDA parser test', function () {
             .pipe(new bbcms.CcdaParserStream())
             .on('data', function (data) {
                 expect(data).to.exist;
-                fs.writeFile(__dirname + '/artifacts/bluebutton-02-updated.json', JSON.stringify(data, null, '  '));
+                fs.writeFileSync(__dirname + '/artifacts/bluebutton-02-updated.json', JSON.stringify(data, null, '  '));
             })
             .on('finish', function () {
                 done();
