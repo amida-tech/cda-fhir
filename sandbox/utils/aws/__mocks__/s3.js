@@ -30,6 +30,9 @@ const getObjectStreamMock = jest.fn((Bucket, Key) => {
   return mockStream;
 });
 
+const getObjectMock = jest.fn((Bucket, Key) => {
+  return mockBuckets[Bucket][Key]
+});
 const listObjectsMock = jest.fn(Bucket => _.map(mockBuckets[Bucket],(obj, key) => key));
 
 const putObjectMock = jest.fn((bucket, key, object) => {
@@ -44,6 +47,7 @@ s3.__setMockObjects = __setMockObjects;
 s3.__resetMockObjects = __resetMockObjects;
 s3.listObjects = listObjectsMock;
 s3.getObjectStream = getObjectStreamMock;
+s3.getObject = getObjectMock;
 s3.putObject = putObjectMock;
 
 

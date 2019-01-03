@@ -38,6 +38,7 @@ describe('CDA->FHIR parser lambda', async () => {
         expect(s3Mocks.getObjectStream).toBeCalledTimes(1)
         expect(s3Mocks.getObjectStream.mock.calls[0]).toEqual(['mockInputBucket','HannahBanana_EpicCCD.xml'])
         expect(s3Mocks.putObject.mock.calls[0][2]).toBeDefined()
+        console.log(s3Mocks.putObject.mock.calls[0][2])
 
     });
 })
