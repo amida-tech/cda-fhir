@@ -1,0 +1,10 @@
+
+{
+    "awsRegion": "us-east-1",
+    "s3":{
+        "url": "http://localhost:4572",
+        "apiVersion": "2006-03-01",
+        "inputBucket": "inputBucket",
+        "outputBucket": "outputBucket"
+    }
+}

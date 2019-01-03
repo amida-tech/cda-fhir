@@ -26,23 +26,26 @@
     "node": ">= 0.10.0"
   },
   "dependencies": {
+    "aws-sdk": "^2.382.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "jest": "^23.6.0",
     "lodash": "~3.10.0",
-    "sax": "*" 
+    "sax": "*"
   },
   "devDependencies": {
-    "chai": "~2.3.0",
+    "adm-zip": "^0.4.7",
     "coveralls": "~2.11.2",
     "grunt": "~0.4.5",
     "grunt-contrib-jshint": "~0.11.2",
     "grunt-coveralls": "~1.0.0",
-    "grunt-mocha-istanbul": "^3.0.1",
     "grunt-jsbeautifier": "~0.2.10",
+    "grunt-mocha-istanbul": "^3.0.1",
     "grunt-mocha-test": "~0.12.7",
-    "mocha": "~2.2.4",
-    "request": "~2.61.0",
     "istanbul": "*",
+    "mocha": "~2.2.4",
     "mocha-lcov-reporter": "0.0.2",
-    "adm-zip": "^0.4.7",
+    "request": "~2.61.0",
     "sync-request": "^2.1.0"
   },
   "repository": {

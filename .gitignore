@@ -28,3 +28,7 @@ node_modules
 
 #VSCode (if you are using it)
 .vscode
+
+#test data
+test/artifacts/*
+sandbox/test/data/CCDA/HannahBanana_EpicCCD.xml
