@@ -31,4 +31,5 @@ node_modules
 
 #test data
 test/artifacts/*
-sandbox/test/data/CCDA/HannahBanana_EpicCCD.xml
+sandbox/test/data/CCDA/*.xml
+sandbox/test/data/CCDA/*.json

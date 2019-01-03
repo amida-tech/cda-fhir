@@ -2,7 +2,7 @@
 const _ = require('lodash');
 const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
-const { getSingleFileContents } = require('../../utils/fileio');
+const { getSingleFileContents, writeFile } = require('../../utils/fileio');
 const path = require('path')
 
 chai.use(chaiAsPromised);
@@ -37,8 +37,9 @@ describe('CDA->FHIR parser lambda', async () => {
         expect(s3Mocks.listObjects).toBeCalledWith('mockInputBucket')
         expect(s3Mocks.getObjectStream).toBeCalledTimes(1)
         expect(s3Mocks.getObjectStream.mock.calls[0]).toEqual(['mockInputBucket','HannahBanana_EpicCCD.xml'])
-        expect(s3Mocks.putObject.mock.calls[0][2]).toBeDefined()
-        console.log(s3Mocks.putObject.mock.calls[0][2])
+        expect(s3Mocks.putObject.mock.calls[0][2]).toBeDefined();
+        const output = JSON.parse(s3Mocks.putObject.mock.calls[0][2]);
+        await writeFile(path.join(__dirname, '../data/CCDA/HannahBanana_output.json'), JSON.stringify(output, null, 2));
 
     });
 })
